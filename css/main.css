@@ -1,1 +1,305 @@
-/*# sourceMappingURL=main.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 5vw 90vw;
+  grid-template-rows: 10vh auto 5vh;
+  gap: 20px;
+  justify-content: center;
+  align-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  background: #354259;
+}
+body.light {
+  color: #354259;
+  background: #ECE5C7;
+}
+body #icon {
+  color: white;
+}
+body #icon.light {
+  color: #354259;
+}
+
+#header {
+  grid-area: 1/1/span 1/span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .login-btn {
+  margin: 20px;
+}
+#header .login-btn .login-link {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#header .login-btn .login-link:hover {
+  color: #C2DED1;
+}
+#header .login-btn .login-link.light {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(53, 66, 89, 0.3);
+  color: #354259;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#header .login-btn .login-link.light:hover {
+  color: #C2DED1;
+}
+#header .menu {
+  margin: 20px;
+  display: flex;
+  flex-flow: row-reverse;
+  align-items: center;
+}
+#header .menu .menu-btn {
+  margin: 20px;
+  cursor: pointer;
+}
+#header .menu .menu-nav {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+}
+#header .menu .menu-nav.open {
+  visibility: visible;
+}
+#header .menu .menu-nav .menu-link {
+  margin: 20px;
+}
+#header .menu .menu-nav .menu-link:hover > #icon {
+  display: none;
+}
+#header .menu .menu-nav .menu-link:hover > .menu-title {
+  display: inline-block;
+}
+#header .menu .menu-nav .menu-link .menu-title {
+  display: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#header .menu .menu-nav .menu-link .menu-title:hover {
+  color: #C2DED1;
+}
+#header .menu .menu-nav .menu-link .menu-title.light {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(53, 66, 89, 0.3);
+  color: #354259;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#header .menu .menu-nav .menu-link .menu-title.light:hover {
+  color: #C2DED1;
+}
+
+#main {
+  grid-area: 2/2/span 1/span 1;
+  border: solid white;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+}
+#main #about {
+  margin: 20px;
+  width: 30%;
+}
+#main #about .general-info {
+  border-radius: 20px;
+  padding: 20px;
+  color: #354259;
+  background: #ECE5C7;
+}
+#main #about .general-info.light {
+  color: white;
+  background: #354259;
+}
+#main #about .general-info .name,
+#main #about .general-info .objective,
+#main #about .general-info .education {
+  margin: 20px;
+}
+#main #about .general-info .name {
+  text-align: center;
+}
+#main #about .skills {
+  margin: 20px;
+}
+#main #about .skills ul {
+  display: inline-block;
+  list-style-type: none;
+}
+#main #about .skills ul li {
+  margin: 10px 20px;
+}
+#main #about .work-experience {
+  margin: 20px;
+}
+#main #about .work-experience div {
+  margin: 10px 20px;
+}
+#main #features {
+  margin: 20px;
+}
+#main #features .search-bar {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+#main #features .search-bar .search-input,
+#main #features .search-bar .search-btn {
+  color: white;
+  background: transparent;
+}
+#main #features .search-bar .search-input.light,
+#main #features .search-bar .search-btn.light {
+  color: #354259;
+}
+#main #features .search-bar .search-input {
+  margin-right: 10px;
+  border: 2px solid;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+#main #features .search-bar .search-btn {
+  border: none;
+  cursor: pointer;
+}
+#main #features .project-list {
+  margin: 20px;
+}
+#main #features .project-list li {
+  margin: 10px 20px;
+}
+
+#tools {
+  grid-area: 2/1/span 1/span 1;
+  border: solid white;
+  border-radius: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#tools #contacts {
+  height: 90%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#tools #contacts .contact-link {
+  margin: 20px;
+}
+#tools #contacts .contact-link:hover > #icon {
+  display: none;
+}
+#tools #contacts .contact-link:hover > .contact-title {
+  display: inline-block;
+}
+#tools #contacts .contact-link .contact-title {
+  display: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#tools #contacts .contact-link .contact-title:hover {
+  color: #C2DED1;
+}
+#tools #contacts .contact-link .contact-title.light {
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: rgba(53, 66, 89, 0.3);
+  color: #354259;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease-in-out;
+}
+#tools #contacts .contact-link .contact-title.light:hover {
+  color: #C2DED1;
+}
+#tools #settings {
+  border: 2px solid;
+  border-radius: 20px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#tools #settings .setting-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+#tools #settings .theme-btn {
+  margin: 10px;
+  display: none;
+}
+#tools #settings .theme-btn.open {
+  display: block;
+}
+#tools #settings .theme-btn .theme-checkbox {
+  display: none;
+}
+#tools #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #dark {
+  display: none;
+}
+#tools #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #light {
+  display: inline;
+}
+#tools #settings .theme-btn .theme-toggle {
+  cursor: pointer;
+}
+#tools #settings .theme-btn .theme-toggle > #light {
+  display: none;
+}
+#tools #settings .time-btn {
+  margin: 10px;
+  cursor: pointer;
+  display: none;
+}
+#tools #settings .time-btn.open {
+  display: block;
+}
+
+#footer {
+  grid-area: 3/1/span 1/span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1135px) {
+  #main {
+    display: block;
+  }
+  #main #about {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}/*# sourceMappingURL=main.css.map */
