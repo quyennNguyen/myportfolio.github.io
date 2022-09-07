@@ -1,0 +1,1 @@
+This is a mockup design for my porfolio website to get ready for job hunting.
