@@ -3,8 +3,8 @@
 
 body {
     display: grid;
-    grid-template-columns: 5vw 90vw;
-    grid-template-rows: 10vh auto 5vh;
+    grid-template-columns: 5vw 30vw 60vw;
+    grid-template-rows: 10vh 80vh 5vh;
     gap: 20px;
     justify-content: center;
     align-content: center;
@@ -16,168 +16,140 @@ body {
         color: $color-1;
         background: $color-3;
     }
-
-    #icon {
-        color: set-color($color-1);
-
-        &.light {
-            color: $color-1;
-        }
-    }
 }
 
 #header {
-    grid-area: 1 / 1 / span 1 / span 2;
+    grid-area: 1 / 1 / span 1 / span 3;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row-reverse;
     align-items: center;
 
-    .login-btn {
-        margin: 20px;
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
 
-        .login-link {
-            @include link;
+        span {
+            margin: 10px;
+            font-weight: map-get($font-weight, large);
+        }
 
-            &.light {
-                @include link($color-1);
+        #menu-x {
+            display: none;
+        }
+
+        &.click {
+
+            span,
+            #menu-bars {
+                display: none;
+            }
+
+            #menu-x {
+                display: inline-block;
             }
         }
     }
 
-    .menu {
-        margin: 20px;
+    .menu-nav {
+        width: 95%;
         display: flex;
-        flex-flow: row-reverse;
+        justify-content: space-evenly;
         align-items: center;
+        visibility: hidden;
 
-        .menu-btn {
-            margin: 20px;
-            cursor: pointer;
+        &.open {
+            visibility: visible;
         }
 
-        .menu-nav {
-            display: flex;
-            align-items: center;
-            visibility: hidden;
-
-            &.open {
-                visibility: visible;
+        .menu-link {
+            a {
+                display: none;
+                @include link;
             }
 
-            .menu-link {
-                margin: 20px;
-
-                &:hover>#icon {
+            &:hover {
+                i {
                     display: none;
                 }
 
-                &:hover>.menu-title {
+                a {
                     display: inline-block;
                 }
+            }
 
-                .menu-title {
-                    display: none;
-                    @include link;
-
-                    &.light {
-                        @include link($color-1);
-                    }
+            &.light {
+                a {
+                    @include link($color-1);
                 }
             }
         }
     }
 }
 
-#main {
+#about {
     grid-area: 2 / 2 / span 1 / span 1;
     border: solid white;
     border-radius: 20px;
-    background: rgba(white, 0.2);
-    display: flex;
 
-    #about {
-        margin: 20px;
-        width: 30%;
+    &:target {
+        background: rgba(white, 0.2);
+    }
 
-        .general-info {
-            border-radius: 20px;
-            padding: 20px;
-            color: set-color($color-3);
-            background: $color-3;
-
-            &.light {
-                color: set-color($color-1);
-                background: $color-1;
-            }
-
-            .name,
-            .objective,
-            .education {
-                margin: 20px;
-            }
-
-            .name {
-                text-align: center;
-            }
-        }
-
-        .skills {
-            margin: 20px;
-
-            ul {
-                display: inline-block;
-                list-style-type: none;
-
-                li {
-                    margin: 10px 20px;
-                }
-            }
-        }
-
-        .work-experience {
-            margin: 20px;
-
-            div {
-                margin: 10px 20px;
-            }
+    section {
+        margin: 30px;
+        
+        &:first-child {
+            text-align: center;
         }
     }
 
-    #features {
-        margin: 20px;
+    div {
+        margin: 10px 30px;
+    }
+}
 
-        .search-bar {
-            width: fit-content;
+#features {
+    grid-area: 2 / 3 / span 1 / span 1;
+    border: solid white;
+    border-radius: 20px;
+    padding: 30px;
 
-            .search-input,
-            .search-btn {
-                color: set-color($color-1);
-                background: transparent;
+    &:target {
+        background: rgba(white, 0.2);
+    }
 
-                &.light {
-                    color: $color-1;
-                }
-            }
+    .search-bar {
+        width: fit-content;
 
-            .search-input {
-                margin-right: 10px;
-                border: 2px solid;
-                border-radius: 20px;
-                padding: 10px 20px;
-            }
+        .search-input, .search-btn {
+            color: set-color($color-1);
+            background: transparent;
 
-            .search-btn {
-                border: none;
-                cursor: pointer;
+            &.light {
+                color: $color-1;
             }
         }
 
-        .project-list {
-            margin: 20px;
+        .search-input {
+            margin-right: 10px;
+            border: 2px solid;
+            border-radius: 20px;
+            padding: 10px 20px;
+            outline: none;
+        }
 
-            li {
-                margin: 10px 20px;
-            }
+        .search-btn {
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    ul {
+        margin: 20px;
+
+        li {
+            margin: 10px 20px;
         }
     }
 }
@@ -190,6 +162,10 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    
+    &:target {
+        background: rgba(white, 0.2);
+    }
 
     #contacts {
         height: 90%;
@@ -199,21 +175,25 @@ body {
         align-items: center;
 
         .contact-link {
-            margin: 20px;
+            margin: 30px;
 
-            &:hover>#icon {
-                display: none;
-            }
-
-            &:hover>.contact-title {
-                display: inline-block;
-            }
-
-            .contact-title {
+            a {
                 display: none;
                 @include link;
+            }
 
-                &.light {
+            &:hover {
+                i {
+                    display: none;
+                }
+    
+                a {
+                    display: inline-block;
+                }
+            }
+
+            &.light {
+                a {
                     @include link($color-1);
                 }
             }
@@ -277,18 +257,12 @@ body {
 }
 
 #footer {
-    grid-area: 3 / 1 / span 1 / span 2;
+    grid-area: 3 / 1 / span 1 / span 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media only screen and (max-width: 1135px) {
-    #main {
-        display: block;
 
-        #about {
-            width: fit-content;
-        }
-    }
 }

@@ -8,9 +8,11 @@ let menuOpen = false;
 
 function menuShow() {
   if (!menuOpen) {
+    menuBtn.classList.add("click");
     menuNav.classList.add("open");
     menuOpen = true;
   } else {
+    menuBtn.classList.remove("click");
     menuNav.classList.remove("open");
     menuOpen = false;
   }
@@ -39,11 +41,8 @@ function settingShow() {
 
 // dark/light theme
 const themeCheckBox = document.querySelector(".theme-checkbox");
-const iconTheme = document.querySelectorAll("#icon");
-const loginLinkTheme = document.querySelector(".login-link");
-const menuTitleTheme = document.querySelectorAll(".menu-title");
-const contactTitleTheme = document.querySelectorAll(".contact-title");
-const generalInfoTheme = document.querySelector(".general-info");
+const menuLinkTheme = document.querySelectorAll(".menu-link");
+const contactLinkTheme = document.querySelectorAll(".contact-link");
 const searchInputTheme = document.querySelector(".search-input");
 const searchBtnTheme = document.querySelector(".search-btn");
 
@@ -51,11 +50,8 @@ themeCheckBox.addEventListener("change", themeChange);
 
 function themeChange() {
   document.body.classList.toggle("light");
-  iconTheme.forEach(item => item.classList.toggle("light"));
-  loginLinkTheme.classList.toggle("light");
-  menuTitleTheme.forEach(item => item.classList.toggle("light"));
-  contactTitleTheme.forEach(item => item.classList.toggle("light"));
-  generalInfoTheme.classList.toggle("light");
+  menuLinkTheme.forEach(item => item.classList.toggle("light"));
+  contactLinkTheme.forEach(item => item.classList.toggle("light"));
   searchInputTheme.classList.toggle("light");
   searchBtnTheme.classList.toggle("light");
 }

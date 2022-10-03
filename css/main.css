@@ -6,8 +6,8 @@
 
 body {
   display: grid;
-  grid-template-columns: 5vw 90vw;
-  grid-template-rows: 10vh auto 5vh;
+  grid-template-columns: 5vw 30vw 60vw;
+  grid-template-rows: 10vh 80vh 5vh;
   gap: 20px;
   justify-content: center;
   align-content: center;
@@ -19,74 +19,43 @@ body.light {
   color: #354259;
   background: #ECE5C7;
 }
-body #icon {
-  color: white;
-}
-body #icon.light {
-  color: #354259;
-}
 
 #header {
-  grid-area: 1/1/span 1/span 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#header .login-btn {
-  margin: 20px;
-}
-#header .login-btn .login-link {
-  border-radius: 20px;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  text-decoration: none;
-  font-weight: 800;
-  transition: all 0.5s ease-in-out;
-}
-#header .login-btn .login-link:hover {
-  color: #C2DED1;
-}
-#header .login-btn .login-link.light {
-  border-radius: 20px;
-  padding: 10px 20px;
-  background: rgba(53, 66, 89, 0.3);
-  color: #354259;
-  text-decoration: none;
-  font-weight: 800;
-  transition: all 0.5s ease-in-out;
-}
-#header .login-btn .login-link.light:hover {
-  color: #C2DED1;
-}
-#header .menu {
-  margin: 20px;
+  grid-area: 1/1/span 1/span 3;
   display: flex;
   flex-flow: row-reverse;
   align-items: center;
 }
-#header .menu .menu-btn {
-  margin: 20px;
+#header .menu-btn {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
-#header .menu .menu-nav {
+#header .menu-btn span {
+  margin: 10px;
+  font-weight: 800;
+}
+#header .menu-btn #menu-x {
+  display: none;
+}
+#header .menu-btn.click span,
+#header .menu-btn.click #menu-bars {
+  display: none;
+}
+#header .menu-btn.click #menu-x {
+  display: inline-block;
+}
+#header .menu-nav {
+  width: 95%;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
   visibility: hidden;
 }
-#header .menu .menu-nav.open {
+#header .menu-nav.open {
   visibility: visible;
 }
-#header .menu .menu-nav .menu-link {
-  margin: 20px;
-}
-#header .menu .menu-nav .menu-link:hover > #icon {
-  display: none;
-}
-#header .menu .menu-nav .menu-link:hover > .menu-title {
-  display: inline-block;
-}
-#header .menu .menu-nav .menu-link .menu-title {
+#header .menu-nav .menu-link a {
   display: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -96,10 +65,16 @@ body #icon.light {
   font-weight: 800;
   transition: all 0.5s ease-in-out;
 }
-#header .menu .menu-nav .menu-link .menu-title:hover {
+#header .menu-nav .menu-link a:hover {
   color: #C2DED1;
 }
-#header .menu .menu-nav .menu-link .menu-title.light {
+#header .menu-nav .menu-link:hover i {
+  display: none;
+}
+#header .menu-nav .menu-link:hover a {
+  display: inline-block;
+}
+#header .menu-nav .menu-link.light a {
   border-radius: 20px;
   padding: 10px 20px;
   background: rgba(53, 66, 89, 0.3);
@@ -108,86 +83,64 @@ body #icon.light {
   font-weight: 800;
   transition: all 0.5s ease-in-out;
 }
-#header .menu .menu-nav .menu-link .menu-title.light:hover {
+#header .menu-nav .menu-link.light a:hover {
   color: #C2DED1;
 }
 
-#main {
+#about {
   grid-area: 2/2/span 1/span 1;
   border: solid white;
   border-radius: 20px;
+}
+#about:target {
   background: rgba(255, 255, 255, 0.2);
-  display: flex;
 }
-#main #about {
-  margin: 20px;
-  width: 30%;
+#about section {
+  margin: 30px;
 }
-#main #about .general-info {
-  border-radius: 20px;
-  padding: 20px;
-  color: #354259;
-  background: #ECE5C7;
-}
-#main #about .general-info.light {
-  color: white;
-  background: #354259;
-}
-#main #about .general-info .name,
-#main #about .general-info .objective,
-#main #about .general-info .education {
-  margin: 20px;
-}
-#main #about .general-info .name {
+#about section:first-child {
   text-align: center;
 }
-#main #about .skills {
-  margin: 20px;
+#about div {
+  margin: 10px 30px;
 }
-#main #about .skills ul {
-  display: inline-block;
-  list-style-type: none;
+
+#features {
+  grid-area: 2/3/span 1/span 1;
+  border: solid white;
+  border-radius: 20px;
+  padding: 30px;
 }
-#main #about .skills ul li {
-  margin: 10px 20px;
+#features:target {
+  background: rgba(255, 255, 255, 0.2);
 }
-#main #about .work-experience {
-  margin: 20px;
-}
-#main #about .work-experience div {
-  margin: 10px 20px;
-}
-#main #features {
-  margin: 20px;
-}
-#main #features .search-bar {
+#features .search-bar {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-#main #features .search-bar .search-input,
-#main #features .search-bar .search-btn {
+#features .search-bar .search-input, #features .search-bar .search-btn {
   color: white;
   background: transparent;
 }
-#main #features .search-bar .search-input.light,
-#main #features .search-bar .search-btn.light {
+#features .search-bar .search-input.light, #features .search-bar .search-btn.light {
   color: #354259;
 }
-#main #features .search-bar .search-input {
+#features .search-bar .search-input {
   margin-right: 10px;
   border: 2px solid;
   border-radius: 20px;
   padding: 10px 20px;
+  outline: none;
 }
-#main #features .search-bar .search-btn {
+#features .search-bar .search-btn {
   border: none;
   cursor: pointer;
 }
-#main #features .project-list {
+#features ul {
   margin: 20px;
 }
-#main #features .project-list li {
+#features ul li {
   margin: 10px 20px;
 }
 
@@ -200,6 +153,9 @@ body #icon.light {
   justify-content: center;
   align-items: center;
 }
+#tools:target {
+  background: rgba(255, 255, 255, 0.2);
+}
 #tools #contacts {
   height: 90%;
   display: flex;
@@ -208,15 +164,9 @@ body #icon.light {
   align-items: center;
 }
 #tools #contacts .contact-link {
-  margin: 20px;
+  margin: 30px;
 }
-#tools #contacts .contact-link:hover > #icon {
-  display: none;
-}
-#tools #contacts .contact-link:hover > .contact-title {
-  display: inline-block;
-}
-#tools #contacts .contact-link .contact-title {
+#tools #contacts .contact-link a {
   display: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -226,10 +176,16 @@ body #icon.light {
   font-weight: 800;
   transition: all 0.5s ease-in-out;
 }
-#tools #contacts .contact-link .contact-title:hover {
+#tools #contacts .contact-link a:hover {
   color: #C2DED1;
 }
-#tools #contacts .contact-link .contact-title.light {
+#tools #contacts .contact-link:hover i {
+  display: none;
+}
+#tools #contacts .contact-link:hover a {
+  display: inline-block;
+}
+#tools #contacts .contact-link.light a {
   border-radius: 20px;
   padding: 10px 20px;
   background: rgba(53, 66, 89, 0.3);
@@ -238,7 +194,7 @@ body #icon.light {
   font-weight: 800;
   transition: all 0.5s ease-in-out;
 }
-#tools #contacts .contact-link .contact-title.light:hover {
+#tools #contacts .contact-link.light a:hover {
   color: #C2DED1;
 }
 #tools #settings {
@@ -287,19 +243,8 @@ body #icon.light {
 }
 
 #footer {
-  grid-area: 3/1/span 1/span 2;
+  grid-area: 3/1/span 1/span 3;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-@media only screen and (max-width: 1135px) {
-  #main {
-    display: block;
-  }
-  #main #about {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
 }/*# sourceMappingURL=main.css.map */
