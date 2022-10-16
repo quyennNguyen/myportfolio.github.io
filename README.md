@@ -1,4 +1,4 @@
-# MY PORFOLIO WEBSITE
+# MY PORTFOLIO WEBSITE
 
 ### Description:
 ##### - clear and informative
