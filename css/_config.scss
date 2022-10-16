@@ -11,14 +11,27 @@
 @mixin link($color: set-color($color-1)) {
     border-radius: 20px;
     padding: 10px 20px;
-    background: rgba($color, 0.3);
     color: $color;
     text-decoration: none;
-    font-weight: map-get($font-weight, large);
+    font-weight: bold;
     @include transition;
 
     &:hover {
         color: $color-2;
+    }
+}
+
+@mixin box {
+    margin: 10px;
+    border: solid set-color($color-1);
+    border-radius: 20px;
+
+    &.light {
+        border: solid $color-1;
+    }
+
+    &:target {
+        background: rgba($color-2, 0.4);
     }
 }
 

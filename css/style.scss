@@ -3,9 +3,8 @@
 
 body {
     display: grid;
-    grid-template-columns: 5vw 30vw 60vw;
-    grid-template-rows: 10vh 80vh 5vh;
-    gap: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: 10vh auto auto 10vh;
     justify-content: center;
     align-content: center;
     font-family: $font-family;
@@ -19,7 +18,7 @@ body {
 }
 
 #header {
-    grid-area: 1 / 1 / span 1 / span 3;
+    grid-area: 1 / 1 / span 1 / span 2;
     display: flex;
     flex-flow: row-reverse;
     align-items: center;
@@ -33,10 +32,11 @@ body {
 
         span {
             margin: 0 10px;
-            font-weight: map-get($font-weight, large);
+            font-weight: bold;
         }
 
         #menu-x {
+            margin: 0 10px;
             display: none;
         }
 
@@ -55,19 +55,22 @@ body {
 
     .menu-nav {
         border-radius: 10px;
-        width: 95%;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        background: $color-3;
         visibility: hidden;
+
+        &.light {
+            background: $color-1;
+        }
 
         &.open {
             visibility: visible;
-            background: rgba(white, $alpha: 0.5);
         }
 
         .menu-link {
-            margin: 15px;
+            margin: 20px;
 
             a {
                 display: none;
@@ -85,22 +88,15 @@ body {
             }
 
             &.light {
-                a {
-                    @include link($color-1);
-                }
+                color: set-color($color-1);
             }
         }
     }
 }
 
 #about {
-    grid-area: 2 / 2 / span 1 / span 1;
-    border: solid white;
-    border-radius: 20px;
-
-    &:target {
-        background: rgba(white, 0.2);
-    }
+    grid-area: 2 / 1 / span 1 / span 1;
+   @include box;
 
     section {
         margin: 30px;
@@ -116,16 +112,11 @@ body {
 }
 
 #features {
-    grid-area: 2 / 3 / span 1 / span 1;
-    border: solid white;
-    border-radius: 20px;
-    padding: 30px;
-
-    &:target {
-        background: rgba(white, 0.2);
-    }
+    grid-area: 2 / 2 / span 2 / span 1;
+    @include box;
 
     .search-bar {
+        margin: 30px;
         width: fit-content;
 
         .search-input, .search-btn {
@@ -153,22 +144,15 @@ body {
 }
 
 #tools {
-    grid-area: 2 / 1 / span 1 / span 1;
-    border: solid white;
-    border-radius: 20px;
+    grid-area: 3 / 1 / span 1 / span 1;
     display: flex;
-    flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    
-    &:target {
-        background: rgba(white, 0.2);
-    }
+    @include box;
 
     #contacts {
         height: 90%;
         display: flex;
-        flex-flow: column;
         justify-content: center;
         align-items: center;
 
@@ -256,59 +240,64 @@ body {
 }
 
 #footer {
-    grid-area: 3 / 1 / span 1 / span 3;
+    grid-area: 4 / 1 / span 1 / span 2;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media screen and (max-width: 1557px) {
-    body {
-        grid-template-rows: 10vh auto 5vh;
+@media screen and (min-width: 1369px) and (max-width: 2200px) {
+    #about {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
+
+    #features {
+        grid-area: 2 / 2 / span 1 / span 1;
+    }
+
+    #tools {
+        grid-area: 3 / 1 / span 1 / span 2;
     }
 }
 
 @media screen and (max-width: 1368px) {
     #header {
         .menu-nav {
-            width: fit-content;
             flex-flow: column;
+            align-items: flex-end;
             position: fixed;
-            top: 5vh;
+            top: 10vh;
+            visibility: hidden;
+
+            &.open {
+                visibility: visible;
+            }
         }
     }
 }
 
-@media screen and (min-width: 767px) and (max-width: 1369px) {
+@media screen and (min-width: 767px) and (max-width: 1368px) {
+    #about {
+        grid-area: 2 / 1 / span 1 / span 1;
+    }
 
+    #features {
+        grid-area: 3 / 1 / span 1 / span 2;
+    }
+
+    #tools {
+        grid-area: 2 / 2 / span 1 / span 1;
+        flex-flow: column;
+
+        #contacts {
+            flex-flow: column;
+        }
+    }
 }
 
 @media screen and (max-width: 766px) {
     body {
         display: flex;
         flex-flow: column;
-        gap: 0;
-    }
-
-    #header, #about, #features, #tools, #footer {
-        margin: 10px 20px;
-    }
-
-    #tools {
-        flex-flow: row-reverse;
-
-        #contacts {
-            flex-flow: row;
-        }
-    }
-}
-
-@media screen and (max-width: 625px) {
-    #tools {
-        flex-flow: column;
-
-        #contacts {
-            flex-flow: column;
-        }
     }
 }

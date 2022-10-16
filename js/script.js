@@ -41,6 +41,9 @@ function settingShow() {
 
 // dark/light theme
 const themeCheckBox = document.querySelector(".theme-checkbox");
+const aboutTheme = document.querySelector("#about");
+const featureTheme = document.querySelector("#features");
+const toolTheme = document.querySelector("#tools");
 const menuLinkTheme = document.querySelectorAll(".menu-link");
 const contactLinkTheme = document.querySelectorAll(".contact-link");
 const searchInputTheme = document.querySelector(".search-input");
@@ -50,6 +53,10 @@ themeCheckBox.addEventListener("change", themeChange);
 
 function themeChange() {
   document.body.classList.toggle("light");
+  aboutTheme.classList.toggle("light");
+  featureTheme.classList.toggle("light");
+  toolTheme.classList.toggle("light");
+  menuNav.classList.toggle("light");
   menuLinkTheme.forEach(item => item.classList.toggle("light"));
   contactLinkTheme.forEach(item => item.classList.toggle("light"));
   searchInputTheme.classList.toggle("light");
