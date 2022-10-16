@@ -23,6 +23,8 @@ body {
     display: flex;
     flex-flow: row-reverse;
     align-items: center;
+    position: sticky;
+    top: 0px;
 
     .menu-btn {
         display: flex;
@@ -30,7 +32,7 @@ body {
         cursor: pointer;
 
         span {
-            margin: 10px;
+            margin: 0 10px;
             font-weight: map-get($font-weight, large);
         }
 
@@ -52,6 +54,7 @@ body {
     }
 
     .menu-nav {
+        border-radius: 10px;
         width: 95%;
         display: flex;
         justify-content: space-evenly;
@@ -60,9 +63,12 @@ body {
 
         &.open {
             visibility: visible;
+            background: rgba(white, $alpha: 0.5);
         }
 
         .menu-link {
+            margin: 15px;
+
             a {
                 display: none;
                 @include link;
@@ -144,14 +150,6 @@ body {
             cursor: pointer;
         }
     }
-
-    ul {
-        margin: 20px;
-
-        li {
-            margin: 10px 20px;
-        }
-    }
 }
 
 #tools {
@@ -160,7 +158,7 @@ body {
     border-radius: 20px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     
     &:target {
@@ -201,6 +199,7 @@ body {
     }
 
     #settings {
+        margin: 30px;
         border: 2px solid;
         border-radius: 20px;
         width: fit-content;
@@ -263,6 +262,53 @@ body {
     align-items: center;
 }
 
-@media only screen and (max-width: 1135px) {
+@media screen and (max-width: 1557px) {
+    body {
+        grid-template-rows: 10vh auto 5vh;
+    }
+}
 
+@media screen and (max-width: 1368px) {
+    #header {
+        .menu-nav {
+            width: fit-content;
+            flex-flow: column;
+            position: fixed;
+            top: 5vh;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1369px) {
+
+}
+
+@media screen and (max-width: 766px) {
+    body {
+        display: flex;
+        flex-flow: column;
+        gap: 0;
+    }
+
+    #header, #about, #features, #tools, #footer {
+        margin: 10px 20px;
+    }
+
+    #tools {
+        flex-flow: row-reverse;
+
+        #contacts {
+            flex-flow: row;
+        }
+    }
+}
+
+@media screen and (max-width: 625px) {
+    #tools {
+        flex-flow: column;
+
+        #contacts {
+            flex-flow: column;
+        }
+    }
 }

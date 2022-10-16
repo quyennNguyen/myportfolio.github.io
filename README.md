@@ -3,10 +3,10 @@
 ### Description:
 ##### - clear and informative
 ##### - compact and organized
-##### - efficient view time => should be an one-paged instead of multiple-paged design => time-saving for the viewer
+##### - efficient view time => should be a one-page instead of multiple-page design => avoid too much scrolling => time-saving for the viewer
 
 ### Features:
-##### - compact one-paged design
+##### - compact one-page design
 ##### - have a menu button to monitor all parts of the page
 ##### - include a few featured projects
 ##### - have some page settings to make viewing more interesting

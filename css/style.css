@@ -25,6 +25,9 @@ body.light {
   display: flex;
   flex-flow: row-reverse;
   align-items: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
 }
 #header .menu-btn {
   display: flex;
@@ -32,7 +35,7 @@ body.light {
   cursor: pointer;
 }
 #header .menu-btn span {
-  margin: 10px;
+  margin: 0 10px;
   font-weight: 800;
 }
 #header .menu-btn #menu-x {
@@ -46,6 +49,7 @@ body.light {
   display: inline-block;
 }
 #header .menu-nav {
+  border-radius: 10px;
   width: 95%;
   display: flex;
   justify-content: space-evenly;
@@ -54,6 +58,10 @@ body.light {
 }
 #header .menu-nav.open {
   visibility: visible;
+  background: rgba(255, 255, 255, 0.5);
+}
+#header .menu-nav .menu-link {
+  margin: 15px;
 }
 #header .menu-nav .menu-link a {
   display: none;
@@ -137,12 +145,6 @@ body.light {
   border: none;
   cursor: pointer;
 }
-#features ul {
-  margin: 20px;
-}
-#features ul li {
-  margin: 10px 20px;
-}
 
 #tools {
   grid-area: 2/1/span 1/span 1;
@@ -150,7 +152,7 @@ body.light {
   border-radius: 20px;
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 #tools:target {
@@ -198,6 +200,7 @@ body.light {
   color: #C2DED1;
 }
 #tools #settings {
+  margin: 30px;
   border: 2px solid;
   border-radius: 20px;
   width: -webkit-fit-content;
@@ -247,4 +250,44 @@ body.light {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 1557px) {
+  body {
+    grid-template-rows: 10vh auto 5vh;
+  }
+}
+@media screen and (max-width: 1368px) {
+  #header .menu-nav {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    flex-flow: column;
+    position: fixed;
+    top: 5vh;
+  }
+}
+@media screen and (max-width: 766px) {
+  body {
+    display: flex;
+    flex-flow: column;
+    gap: 0;
+  }
+  #header, #about, #features, #tools, #footer {
+    margin: 10px 20px;
+  }
+  #tools {
+    flex-flow: row-reverse;
+  }
+  #tools #contacts {
+    flex-flow: row;
+  }
+}
+@media screen and (max-width: 625px) {
+  #tools {
+    flex-flow: column;
+  }
+  #tools #contacts {
+    flex-flow: column;
+  }
 }/*# sourceMappingURL=style.css.map */
