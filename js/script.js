@@ -21,7 +21,6 @@ function menuShow() {
 // settings
 const settingBtn = document.querySelector(".setting-btn");
 const themeBtn = document.querySelector(".theme-btn");
-const timeBtn = document.querySelector(".time-btn");
 
 settingBtn.addEventListener("click", settingShow);
 
@@ -30,11 +29,9 @@ let settingOpen = false;
 function settingShow() {
   if (!settingOpen) {
     themeBtn.classList.add("open");
-    timeBtn.classList.add("open");
     settingOpen = true;
   } else {
     themeBtn.classList.remove("open");
-    timeBtn.classList.remove("open");
     settingOpen = false;
   }
 }
@@ -61,11 +58,4 @@ function themeChange() {
   contactLinkTheme.forEach(item => item.classList.toggle("light"));
   searchInputTheme.classList.toggle("light");
   searchBtnTheme.classList.toggle("light");
-}
-
-// time
-timeBtn.addEventListener("click", showTime);
-
-function showTime() {
-  window.alert(Date());
 }
