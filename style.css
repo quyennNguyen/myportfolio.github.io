@@ -72,6 +72,7 @@ body.light {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: large;
   transition: all 0.5s ease-in-out;
 }
 #header .menu-nav .menu-link a:hover {
@@ -177,6 +178,7 @@ body.light {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  font-size: large;
   transition: all 0.5s ease-in-out;
 }
 #tools #contacts .contact-link a:hover {
@@ -194,6 +196,7 @@ body.light {
   color: #354259;
   text-decoration: none;
   font-weight: bold;
+  font-size: large;
   transition: all 0.5s ease-in-out;
 }
 #tools #contacts .contact-link.light a:hover {
