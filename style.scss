@@ -8,7 +8,7 @@ body {
     justify-content: center;
     align-content: center;
     font-family: $font-family;
-    color: set-color($color-1);
+    color: $color-3;
     background: $color-1;
 
     &.light {
@@ -20,6 +20,7 @@ body {
 #header {
     grid-area: 1 / 1 / span 1 / span 2;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 
     .logo {
@@ -29,77 +30,33 @@ body {
     }
 
     .menu-btn {
+        margin: 0 10px;
         display: flex;
         align-items: center;
-        position: fixed;
-        top: 3vh;
-        right: 0;
-        z-index: 1;
         cursor: pointer;
 
         span {
             margin: 0 10px;
             font-weight: bold;
         }
-
-        #menu-x {
-            display: none;
-            color: set-color($color-1);
-        }
-
-        &.click {
-
-            span,
-            #menu-bars {
-                display: none;
-            }
-
-            #menu-x {
-                display: inline-block;
-            }
-        }
     }
 
     .menu-nav {
-        height: 100vh;
         display: flex;
-        flex-flow: column;
         justify-content: center;
-        align-items: flex-end;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background: $color-3;
+        align-items: center;
         visibility: hidden;
-
-        &.light {
-            background: $color-1;
-        }
 
         &.open {
             visibility: visible;
         }
 
         .menu-link {
-            margin: 20px;
-
-            a {
-                display: none;
-                @include link;
-            }
-
-            &:hover {
-                i {
-                    display: none;
-                }
-
-                a {
-                    display: inline-block;
-                }
-            }
+            margin: 0 20px;
+            @include link;
 
             &.light {
-                color: set-color($color-1);
+                @include link($color-1);
             }
         }
     }
@@ -131,11 +88,9 @@ body {
 
             div {
                 margin-top: 30px;
+                display: flex;
+                justify-content: flex-end;
 
-                span {
-                    display: inline-block;
-                }
-    
                 @for $i from 1 through 19 {
                     span:nth-child(#{$i}) {
                         animation: animate 1s ease-in-out #{$i * 0.1}s infinite;
@@ -151,12 +106,12 @@ body {
 
         a {
             @include link;
+        }
 
-            &:active {
-                border-radius: 20px 20px 0 0;
-                padding: 10px;
-                background: rgba(set-color($color-1), 0.4);
-            }
+        .obj-link {
+            border-radius: 20px 20px 0 0;
+            padding: 10px;
+            background: rgba(set-color($color-1), 0.4);
         }
 
         &.light {
@@ -166,10 +121,16 @@ body {
         }
     }
 
-    #obj, #ed, #tech {
+    #obj,
+    #ed,
+    #tech {
         border-radius: 0 0 20px 20px;
         padding: 30px;
         background: rgba(set-color($color-1), 0.4);
+    }
+
+    #ed,
+    #tech {
         display: none;
 
         &:target {
@@ -186,113 +147,141 @@ body {
         margin: 30px;
         width: fit-content;
 
-        .search-input,
-        .search-btn {
-            color: set-color($color-1);
+        .search-input {
+            margin-right: 10px;
+            border: 2px solid;
+            border-radius: 20px;
+            padding: 10px 20px;
+            color: $color-3;
             background: transparent;
+            outline: none;
 
             &.light {
                 color: $color-1;
             }
         }
 
-        .search-input {
-            margin-right: 10px;
-            border: 2px solid;
-            border-radius: 20px;
-            padding: 10px 20px;
-            outline: none;
-        }
-
         .search-btn {
             border: none;
+            color: $color-3;
+            background: transparent;
             cursor: pointer;
+
+            &.light {
+                color: $color-1;
+            }
         }
     }
 }
 
-#tools {
+#contacts {
     grid-area: 3 / 1 / span 1 / span 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     @include box;
 
-    #contacts {
-        height: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .contact-link {
+        margin: 30px;
 
-        .contact-link {
-            margin: 30px;
+        a {
+            display: none;
+            @include link;
+        }
 
-            a {
+        &:hover {
+            i {
                 display: none;
-                @include link;
             }
 
-            &:hover {
-                i {
+            a {
+                display: inline-block;
+            }
+        }
+
+        &.light {
+            a {
+                @include link($color-1);
+            }
+        }
+    }
+}
+
+#settings {
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    .setting-btn {
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .theme-btn {
+        margin: 10px;
+        display: none;
+
+        &.open {
+            display: block;
+        }
+
+        .theme-checkbox {
+            display: none;
+
+            &:checked+.theme-toggle {
+                &>#dark {
                     display: none;
                 }
 
-                a {
-                    display: inline-block;
+                &>#light {
+                    display: inline;
                 }
             }
+        }
 
-            &.light {
-                a {
-                    @include link($color-1);
-                }
+        .theme-toggle {
+            cursor: pointer;
+
+            &>#light {
+                display: none;
             }
         }
     }
 
-    #settings {
-        margin: 30px;
-        border: 2px solid;
-        border-radius: 20px;
-        width: fit-content;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .top-btn {
+        margin: 10px;
+        color: $color-3;
+        text-decoration: none;
+        display: none;
 
-        .setting-btn {
-            margin: 10px;
-            cursor: pointer;
+        &.open {
+            display: block;
         }
 
-        .theme-btn {
-            margin: 10px;
-            display: none;
+        &.light {
+            color: $color-1;
+        }
+    }
 
-            &.open {
-                display: block;
-            }
+    .down-btn {
+        margin: 10px;
+        color: $color-3;
+        text-decoration: none;
+        display: none;
 
-            .theme-checkbox {
-                display: none;
+        &.open {
+            display: block;
+        }
 
-                &:checked+.theme-toggle {
-                    &>#dark {
-                        display: none;
-                    }
-
-                    &>#light {
-                        display: inline;
-                    }
-                }
-            }
-
-            .theme-toggle {
-                cursor: pointer;
-
-                &>#light {
-                    display: none;
-                }
-            }
+        &.light {
+            color: $color-1;
         }
     }
 }
@@ -333,7 +322,7 @@ body {
         grid-area: 2 / 2 / span 1 / span 1;
     }
 
-    #tools {
+    #contacts {
         grid-area: 3 / 1 / span 1 / span 2;
     }
 }
@@ -347,13 +336,9 @@ body {
         grid-area: 3 / 1 / span 1 / span 2;
     }
 
-    #tools {
+    #contacts {
         grid-area: 2 / 2 / span 1 / span 1;
         flex-flow: column;
-
-        #contacts {
-            flex-flow: column;
-        }
     }
 }
 

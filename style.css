@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  color: #ECE5C7;
   background: #354259;
 }
 body.light {
@@ -22,6 +22,7 @@ body.light {
 #header {
   grid-area: 1/1/span 1/span 2;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 #header .logo {
@@ -30,82 +31,61 @@ body.light {
   font-size: 3rem;
 }
 #header .menu-btn {
+  margin: 0 10px;
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 3vh;
-  right: 0;
-  z-index: 1;
   cursor: pointer;
 }
 #header .menu-btn span {
   margin: 0 10px;
   font-weight: bold;
 }
-#header .menu-btn #menu-x {
-  display: none;
-  color: white;
-}
-#header .menu-btn.click span,
-#header .menu-btn.click #menu-bars {
-  display: none;
-}
-#header .menu-btn.click #menu-x {
-  display: inline-block;
-}
 #header .menu-nav {
-  height: 100vh;
   display: flex;
-  flex-flow: column;
   justify-content: center;
-  align-items: flex-end;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background: #ECE5C7;
+  align-items: center;
   visibility: hidden;
-}
-#header .menu-nav.light {
-  background: #354259;
 }
 #header .menu-nav.open {
   visibility: visible;
 }
 #header .menu-nav .menu-link {
-  margin: 20px;
-}
-#header .menu-nav .menu-link a {
-  display: none;
-  color: white;
+  margin: 0 20px;
+  color: #ECE5C7;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#header .menu-nav .menu-link a:hover {
+#header .menu-nav .menu-link:hover {
   color: #C2DED1;
 }
-#header .menu-nav .menu-link:hover i {
-  display: none;
-}
-#header .menu-nav .menu-link:hover a {
-  display: inline-block;
-}
 #header .menu-nav .menu-link.light {
-  color: white;
+  color: #354259;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: large;
+  transition: all 0.5s ease-in-out;
+}
+#header .menu-nav .menu-link.light:hover {
+  color: #C2DED1;
 }
 
 #about {
   grid-area: 2/1/span 1/span 1;
-  margin: 10px;
-  border: solid white;
+  margin: 20px;
+  border: solid #ECE5C7;
   border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+#about:target {
+  box-shadow: -15px 15px 12px #CDC2AE;
 }
 #about.light {
   border: solid #354259;
 }
-#about:target {
-  background: rgba(194, 222, 209, 0.4);
+#about.light:target {
+  box-shadow: -15px 15px 12px #354259;
 }
 #about .avt {
   margin: 30px;
@@ -127,9 +107,8 @@ body.light {
 }
 #about .avt div div {
   margin-top: 30px;
-}
-#about .avt div div span {
-  display: inline-block;
+  display: flex;
+  justify-content: flex-end;
 }
 #about .avt div div span:nth-child(1) {
   -webkit-animation: animate 1s ease-in-out 0.1s infinite;
@@ -212,7 +191,7 @@ body.light {
   justify-content: space-evenly;
 }
 #about .section-nav a {
-  color: white;
+  color: #ECE5C7;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
@@ -221,7 +200,7 @@ body.light {
 #about .section-nav a:hover {
   color: #C2DED1;
 }
-#about .section-nav a:active {
+#about .section-nav .obj-link {
   border-radius: 20px 20px 0 0;
   padding: 10px;
   background: rgba(255, 255, 255, 0.4);
@@ -236,27 +215,37 @@ body.light {
 #about .section-nav.light a:hover {
   color: #C2DED1;
 }
-#about #obj, #about #ed, #about #tech {
+#about #obj,
+#about #ed,
+#about #tech {
   border-radius: 0 0 20px 20px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.4);
+}
+#about #ed,
+#about #tech {
   display: none;
 }
-#about #obj:target, #about #ed:target, #about #tech:target {
+#about #ed:target,
+#about #tech:target {
   display: block;
 }
 
 #features {
   grid-area: 2/2/span 2/span 1;
-  margin: 10px;
-  border: solid white;
+  margin: 20px;
+  border: solid #ECE5C7;
   border-radius: 20px;
+  transition: all 0.5s ease-in-out;
+}
+#features:target {
+  box-shadow: -15px 15px 12px #CDC2AE;
 }
 #features.light {
   border: solid #354259;
 }
-#features:target {
-  background: rgba(194, 222, 209, 0.4);
+#features.light:target {
+  box-shadow: -15px 15px 12px #354259;
 }
 #features .search-bar {
   margin: 30px;
@@ -264,80 +253,80 @@ body.light {
   width: -moz-fit-content;
   width: fit-content;
 }
-#features .search-bar .search-input,
-#features .search-bar .search-btn {
-  color: white;
-  background: transparent;
-}
-#features .search-bar .search-input.light,
-#features .search-bar .search-btn.light {
-  color: #354259;
-}
 #features .search-bar .search-input {
   margin-right: 10px;
   border: 2px solid;
   border-radius: 20px;
   padding: 10px 20px;
+  color: #ECE5C7;
+  background: transparent;
   outline: none;
+}
+#features .search-bar .search-input.light {
+  color: #354259;
 }
 #features .search-bar .search-btn {
   border: none;
+  color: #ECE5C7;
+  background: transparent;
   cursor: pointer;
 }
+#features .search-bar .search-btn.light {
+  color: #354259;
+}
 
-#tools {
+#contacts {
   grid-area: 3/1/span 1/span 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 10px;
-  border: solid white;
+  margin: 20px;
+  border: solid #ECE5C7;
   border-radius: 20px;
+  transition: all 0.5s ease-in-out;
 }
-#tools.light {
+#contacts:target {
+  box-shadow: -15px 15px 12px #CDC2AE;
+}
+#contacts.light {
   border: solid #354259;
 }
-#tools:target {
-  background: rgba(194, 222, 209, 0.4);
+#contacts.light:target {
+  box-shadow: -15px 15px 12px #354259;
 }
-#tools #contacts {
-  height: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#tools #contacts .contact-link {
+#contacts .contact-link {
   margin: 30px;
 }
-#tools #contacts .contact-link a {
+#contacts .contact-link a {
   display: none;
-  color: white;
+  color: #ECE5C7;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#tools #contacts .contact-link a:hover {
+#contacts .contact-link a:hover {
   color: #C2DED1;
 }
-#tools #contacts .contact-link:hover i {
+#contacts .contact-link:hover i {
   display: none;
 }
-#tools #contacts .contact-link:hover a {
+#contacts .contact-link:hover a {
   display: inline-block;
 }
-#tools #contacts .contact-link.light a {
+#contacts .contact-link.light a {
   color: #354259;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#tools #contacts .contact-link.light a:hover {
+#contacts .contact-link.light a:hover {
   color: #C2DED1;
 }
-#tools #settings {
-  margin: 30px;
+
+#settings {
+  margin: 10px;
   border: 2px solid;
   border-radius: 20px;
   width: -webkit-fit-content;
@@ -346,32 +335,59 @@ body.light {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
-#tools #settings .setting-btn {
+#settings .setting-btn {
   margin: 10px;
   cursor: pointer;
 }
-#tools #settings .theme-btn {
+#settings .theme-btn {
   margin: 10px;
   display: none;
 }
-#tools #settings .theme-btn.open {
+#settings .theme-btn.open {
   display: block;
 }
-#tools #settings .theme-btn .theme-checkbox {
+#settings .theme-btn .theme-checkbox {
   display: none;
 }
-#tools #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #dark {
+#settings .theme-btn .theme-checkbox:checked + .theme-toggle > #dark {
   display: none;
 }
-#tools #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #light {
+#settings .theme-btn .theme-checkbox:checked + .theme-toggle > #light {
   display: inline;
 }
-#tools #settings .theme-btn .theme-toggle {
+#settings .theme-btn .theme-toggle {
   cursor: pointer;
 }
-#tools #settings .theme-btn .theme-toggle > #light {
+#settings .theme-btn .theme-toggle > #light {
   display: none;
+}
+#settings .top-btn {
+  margin: 10px;
+  color: #ECE5C7;
+  text-decoration: none;
+  display: none;
+}
+#settings .top-btn.open {
+  display: block;
+}
+#settings .top-btn.light {
+  color: #354259;
+}
+#settings .down-btn {
+  margin: 10px;
+  color: #ECE5C7;
+  text-decoration: none;
+  display: none;
+}
+#settings .down-btn.open {
+  display: block;
+}
+#settings .down-btn.light {
+  color: #354259;
 }
 
 #footer {
@@ -416,7 +432,7 @@ body.light {
   #features {
     grid-area: 2/2/span 1/span 1;
   }
-  #tools {
+  #contacts {
     grid-area: 3/1/span 1/span 2;
   }
 }
@@ -427,11 +443,8 @@ body.light {
   #features {
     grid-area: 3/1/span 1/span 2;
   }
-  #tools {
+  #contacts {
     grid-area: 2/2/span 1/span 1;
-    flex-flow: column;
-  }
-  #tools #contacts {
     flex-flow: column;
   }
 }
