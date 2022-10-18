@@ -39,6 +39,7 @@ function settingShow() {
 // dark/light theme
 const themeCheckBox = document.querySelector(".theme-checkbox");
 const aboutTheme = document.querySelector("#about");
+const sectionNavTheme = document.querySelector(".section-nav");
 const featureTheme = document.querySelector("#features");
 const toolTheme = document.querySelector("#tools");
 const menuLinkTheme = document.querySelectorAll(".menu-link");
@@ -51,6 +52,7 @@ themeCheckBox.addEventListener("change", themeChange);
 function themeChange() {
   document.body.classList.toggle("light");
   aboutTheme.classList.toggle("light");
+  sectionNavTheme.classList.toggle("light");
   featureTheme.classList.toggle("light");
   toolTheme.classList.toggle("light");
   menuNav.classList.toggle("light");

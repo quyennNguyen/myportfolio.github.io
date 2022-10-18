@@ -3,7 +3,7 @@
 
 body {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 35vw 60vw;
     grid-template-rows: 10vh auto auto 10vh;
     justify-content: center;
     align-content: center;
@@ -20,14 +20,21 @@ body {
 #header {
     grid-area: 1 / 1 / span 1 / span 2;
     display: flex;
-    flex-flow: row-reverse;
     align-items: center;
-    position: sticky;
-    top: 0px;
+
+    .logo {
+        margin: 0 10px;
+        font-weight: bold;
+        font-size: 3rem;
+    }
 
     .menu-btn {
         display: flex;
         align-items: center;
+        position: fixed;
+        top: 3vh;
+        right: 0;
+        z-index: 1;
         cursor: pointer;
 
         span {
@@ -36,8 +43,8 @@ body {
         }
 
         #menu-x {
-            margin: 0 10px;
             display: none;
+            color: set-color($color-1);
         }
 
         &.click {
@@ -54,10 +61,14 @@ body {
     }
 
     .menu-nav {
-        border-radius: 10px;
+        height: 100vh;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: fixed;
+        top: 0;
+        right: 0;
         background: $color-3;
         visibility: hidden;
 
@@ -96,18 +107,74 @@ body {
 
 #about {
     grid-area: 2 / 1 / span 1 / span 1;
-   @include box;
+    @include box;
 
-    section {
+    .avt {
         margin: 30px;
-        
-        &:first-child {
-            text-align: center;
+        width: 90%;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        gap: 20px;
+
+        img {
+            grid-area: 1 / 1 / span 1 / span 1;
+            border-radius: 50%;
+            width: 100%;
+        }
+
+        div {
+            grid-area: 1 / 2 / span 1 / span 1;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            div {
+                margin-top: 30px;
+
+                span {
+                    display: inline-block;
+                }
+    
+                @for $i from 1 through 19 {
+                    span:nth-child(#{$i}) {
+                        animation: animate 1s ease-in-out #{$i * 0.1}s infinite;
+                    }
+                }
+            }
         }
     }
 
-    div {
-        margin: 10px 30px;
+    .section-nav {
+        display: flex;
+        justify-content: space-evenly;
+
+        a {
+            @include link;
+
+            &:active {
+                border-radius: 20px 20px 0 0;
+                padding: 10px;
+                background: rgba(set-color($color-1), 0.4);
+            }
+        }
+
+        &.light {
+            a {
+                @include link($color-1);
+            }
+        }
+    }
+
+    #obj, #ed, #tech {
+        border-radius: 0 0 20px 20px;
+        padding: 30px;
+        background: rgba(set-color($color-1), 0.4);
+        display: none;
+
+        &:target {
+            display: block;
+        }
     }
 }
 
@@ -119,7 +186,8 @@ body {
         margin: 30px;
         width: fit-content;
 
-        .search-input, .search-btn {
+        .search-input,
+        .search-btn {
             color: set-color($color-1);
             background: transparent;
 
@@ -168,7 +236,7 @@ body {
                 i {
                     display: none;
                 }
-    
+
                 a {
                     display: inline-block;
                 }
@@ -236,6 +304,26 @@ body {
     align-items: center;
 }
 
+@keyframes animate {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 2200px) {
+    body {
+        grid-template-columns: auto auto;
+    }
+}
+
 @media screen and (min-width: 1369px) and (max-width: 2200px) {
     #about {
         grid-area: 2 / 1 / span 1 / span 1;
@@ -247,22 +335,6 @@ body {
 
     #tools {
         grid-area: 3 / 1 / span 1 / span 2;
-    }
-}
-
-@media screen and (max-width: 1368px) {
-    #header {
-        .menu-nav {
-            flex-flow: column;
-            align-items: flex-end;
-            position: fixed;
-            top: 10vh;
-            visibility: hidden;
-
-            &.open {
-                visibility: visible;
-            }
-        }
     }
 }
 

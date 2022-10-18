@@ -9,8 +9,6 @@
 }
 
 @mixin link($color: set-color($color-1)) {
-    border-radius: 20px;
-    padding: 10px 20px;
     color: $color;
     text-decoration: none;
     font-weight: bold;
