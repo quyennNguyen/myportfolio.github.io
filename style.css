@@ -293,9 +293,14 @@ header .menu-nav .menu-link.light {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 #features .projects div img {
   width: 90%;
+}
+#features .projects div:hover {
+  -webkit-animation: animate 1s ease-in-out 2;
+          animation: animate 1s ease-in-out 2;
 }
 
 #contacts {

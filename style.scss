@@ -210,9 +210,14 @@ header {
             flex-flow: column;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
             
             img {
                 width: 90%;
+            }
+
+            &:hover {
+                animation: animate 1s ease-in-out 2;
             }
         }
     }
