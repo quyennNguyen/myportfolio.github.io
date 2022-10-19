@@ -253,12 +253,15 @@ header .menu-nav .menu-link.light {
 }
 #features .search-bar {
   margin: 30px;
+  display: flex;
+  justify-content: center;
 }
 #features .search-bar .search-input {
   margin-right: 10px;
   border: 2px solid;
   border-radius: 20px;
   padding: 10px 20px;
+  width: 90%;
   color: #ECE5C7;
   background: transparent;
   outline: none;
