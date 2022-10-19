@@ -3,7 +3,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 35vw 60vw;
+    grid-template-columns: 30vw 65vw;
     grid-template-rows: 10vh auto auto 10vh;
     justify-content: center;
     align-content: center;
@@ -17,7 +17,7 @@ body {
     }
 }
 
-#header {
+header {
     grid-area: 1 / 1 / span 1 / span 2;
     display: flex;
     justify-content: space-between;
@@ -68,7 +68,6 @@ body {
 
     .avt {
         margin: 30px 30px 0;
-        width: 90%;
         display: grid;
         grid-template-columns: 40% 60%;
         gap: 20px;
@@ -133,14 +132,13 @@ body {
     
             .obj-btn, .ed-btn, .tech-btn {
                 border: none;
-                border-bottom: 1px solid $color-3;
+                border-bottom: 1px solid;
                 width: 100%;
                 background: transparent;
                 cursor: pointer;
                 @include link;
 
                 &.light {
-                    border-bottom: 1px solid $color-1;
                     color: $color-1;
                 }
 
@@ -194,6 +192,28 @@ body {
             }
         }
     }
+
+    .projects {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            margin: 30px;
+            border: solid;
+            border-radius: 20px;
+            padding: 20px;
+            width: 20%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                width: 90%;
+            }
+        }
+    }
 }
 
 #contacts {
@@ -229,90 +249,90 @@ body {
     }
 }
 
-#settings {
-    margin: 10px;
-    border: 2px solid;
-    border-radius: 20px;
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-
-    .setting-btn {
-        margin: 10px;
-        cursor: pointer;
-    }
-
-    .theme-btn {
-        margin: 10px;
-        display: none;
-
-        &.open {
-            display: block;
-        }
-
-        .theme-checkbox {
-            display: none;
-
-            &:checked+.theme-toggle {
-                &>#dark {
-                    display: none;
-                }
-
-                &>#light {
-                    display: inline;
-                }
-            }
-        }
-
-        .theme-toggle {
-            cursor: pointer;
-
-            &>#light {
-                display: none;
-            }
-        }
-    }
-
-    .top-btn {
-        margin: 10px;
-        color: $color-3;
-        text-decoration: none;
-        display: none;
-
-        &.open {
-            display: block;
-        }
-
-        &.light {
-            color: $color-1;
-        }
-    }
-
-    .down-btn {
-        margin: 10px;
-        color: $color-3;
-        text-decoration: none;
-        display: none;
-
-        &.open {
-            display: block;
-        }
-
-        &.light {
-            color: $color-1;
-        }
-    }
-}
-
-#footer {
+footer {
     grid-area: 4 / 1 / span 1 / span 2;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    #settings {
+        margin: 10px;
+        border: 2px solid;
+        border-radius: 20px;
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+    
+        .setting-btn {
+            margin: 10px;
+            cursor: pointer;
+        }
+    
+        .theme-btn {
+            margin: 10px;
+            display: none;
+    
+            &.open {
+                display: block;
+            }
+    
+            .theme-checkbox {
+                display: none;
+    
+                &:checked+.theme-toggle {
+                    &>#dark {
+                        display: none;
+                    }
+    
+                    &>#light {
+                        display: inline;
+                    }
+                }
+            }
+    
+            .theme-toggle {
+                cursor: pointer;
+    
+                &>#light {
+                    display: none;
+                }
+            }
+        }
+    
+        .top-btn {
+            margin: 10px;
+            color: $color-3;
+            text-decoration: none;
+            display: none;
+    
+            &.open {
+                display: block;
+            }
+    
+            &.light {
+                color: $color-1;
+            }
+        }
+    
+        .down-btn {
+            margin: 10px;
+            color: $color-3;
+            text-decoration: none;
+            display: none;
+    
+            &.open {
+                display: block;
+            }
+    
+            &.light {
+                color: $color-1;
+            }
+        }
+    }
 }
 
 @keyframes animate {
@@ -329,33 +349,40 @@ body {
     }
 }
 
-@media screen and (max-width: 2200px) {
-    body {
-        grid-template-columns: auto auto;
-    }
-}
-
 @media screen and (min-width: 1369px) and (max-width: 2200px) {
-    #about {
-        grid-area: 2 / 1 / span 1 / span 1;
-    }
-
     #features {
-        grid-area: 2 / 2 / span 1 / span 1;
-    }
+        max-height: 80vh;
+        overflow-y: scroll;
 
-    #contacts {
-        grid-area: 3 / 1 / span 1 / span 2;
+        .projects {
+            flex-flow: column;
+
+            div {
+                width: 40%;
+            }
+        }
     }
 }
 
 @media screen and (min-width: 767px) and (max-width: 1368px) {
+    body {
+        grid-template-columns: 75vw 20vw;
+    }
+    
     #about {
         grid-area: 2 / 1 / span 1 / span 1;
     }
 
     #features {
         grid-area: 3 / 1 / span 1 / span 2;
+
+        .projects {
+            flex-flow: column;
+
+            div {
+                width: 40%;
+            }
+        }
     }
 
     #contacts {
@@ -368,5 +395,15 @@ body {
     body {
         display: flex;
         flex-flow: column;
+    }
+
+    #features {
+        .projects {
+            flex-flow: column;
+
+            div {
+                width: 50%;
+            }
+        }
     }
 }
