@@ -18,21 +18,33 @@ const tech = document.querySelector(".tech");
 
 profileBtn.addEventListener("click", () => {
   profile.classList.toggle("open");
+  objBtn.classList.add("click");
+  edBtn.classList.remove("click");
+  techBtn.classList.remove("click");
   obj.classList.add("open");
   ed.classList.remove("open");
   tech.classList.remove("open");
 });
 objBtn.addEventListener("click", () => {
+  objBtn.classList.add("click");
+  edBtn.classList.remove("click");
+  techBtn.classList.remove("click");
   obj.classList.add("open");
   ed.classList.remove("open");
   tech.classList.remove("open");
 });
 edBtn.addEventListener("click", () => {
+  objBtn.classList.remove("click");
+  edBtn.classList.add("click");
+  techBtn.classList.remove("click");
   obj.classList.remove("open");
   ed.classList.add("open");
   tech.classList.remove("open");
 });
 techBtn.addEventListener("click", () => {
+  objBtn.classList.remove("click");
+  edBtn.classList.remove("click");
+  techBtn.classList.add("click");
   obj.classList.remove("open");
   ed.classList.remove("open");
   tech.classList.add("open");
@@ -54,7 +66,6 @@ settingBtn.addEventListener("click", () => {
 const themeCheckBox = document.querySelector(".theme-checkbox");
 const menuLinkTheme = document.querySelectorAll(".menu-link");
 const aboutTheme = document.querySelector("#about");
-const profileTheme = document.querySelector(".section-nav");
 const featureTheme = document.querySelector("#features");
 const searchInputTheme = document.querySelector(".search-input");
 const searchBtnTheme = document.querySelector(".search-btn");
@@ -66,7 +77,10 @@ themeCheckBox.addEventListener("change", () => {
   menuNav.classList.toggle("light");
   menuLinkTheme.forEach((item) => item.classList.toggle("light"));
   aboutTheme.classList.toggle("light");
-  sectionNavTheme.classList.toggle("light");
+  profileBtn.classList.toggle("light");
+  objBtn.classList.toggle("light");
+  edBtn.classList.toggle("light");
+  techBtn.classList.toggle("light");
   featureTheme.classList.toggle("light");
   searchInputTheme.classList.toggle("light");
   searchBtnTheme.classList.toggle("light");
@@ -75,20 +89,3 @@ themeCheckBox.addEventListener("change", () => {
   topBtn.classList.toggle("light");
   downBtn.classList.toggle("light");
 });
-
-// function clickable(element1, element2) {
-//   window.onclick = function(event) {
-//     if (!event.target.matches(element1)) {
-//       var targetEl = document.getElementsByClassName(element2);
-//       var i;
-  
-//       for (i = 0; i < targetEl.length; i++) {
-//         var openEl = targetEl[i];
-  
-//         if (openEl.classList.contains('open')) {
-//           openEl.classList.remove('open');
-//         }
-//       }
-//     }
-//   }
-// }

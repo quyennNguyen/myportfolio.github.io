@@ -56,7 +56,7 @@ body {
             @include link;
 
             &.light {
-                @include link($color-1);
+                color: $color-1;
             }
         }
     }
@@ -110,9 +110,13 @@ body {
             border: none;
             border-radius: 50px;
             padding: 20px;
-            background: rgba($color-4, 0.3);
+            background: rgba($color-4, 0.5);
             cursor: pointer;
             @include link;
+
+            &.light {
+                color: $color-1;
+            }
         }
     }
 
@@ -124,15 +128,25 @@ body {
         }
 
         .section-nav {
-            border-bottom: solid $color-3;
             display: flex;
             justify-content: space-evenly;
     
-            button {
+            .obj-btn, .ed-btn, .tech-btn {
                 border: none;
+                border-bottom: 1px solid $color-3;
+                width: 100%;
                 background: transparent;
                 cursor: pointer;
                 @include link;
+
+                &.light {
+                    border-bottom: 1px solid $color-1;
+                    color: $color-1;
+                }
+
+                &.click {
+                    border: none;
+                }
             }
         }
 
@@ -209,7 +223,7 @@ body {
 
         &.light {
             a {
-                @include link($color-1);
+                color: $color-1;
             }
         }
     }

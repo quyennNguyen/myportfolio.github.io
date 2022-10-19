@@ -62,13 +62,6 @@ body.light {
 }
 #header .menu-nav .menu-link.light {
   color: #354259;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: large;
-  transition: all 0.5s ease-in-out;
-}
-#header .menu-nav .menu-link.light:hover {
-  color: #C2DED1;
 }
 
 #about {
@@ -196,7 +189,7 @@ body.light {
   border: none;
   border-radius: 50px;
   padding: 20px;
-  background: rgba(205, 194, 174, 0.3);
+  background: rgba(205, 194, 174, 0.5);
   cursor: pointer;
   color: #ECE5C7;
   text-decoration: none;
@@ -207,6 +200,9 @@ body.light {
 #about .view-profile .profile-btn:hover {
   color: #C2DED1;
 }
+#about .view-profile .profile-btn.light {
+  color: #354259;
+}
 #about .profile {
   display: none;
 }
@@ -214,12 +210,13 @@ body.light {
   display: block;
 }
 #about .profile .section-nav {
-  border-bottom: solid #ECE5C7;
   display: flex;
   justify-content: space-evenly;
 }
-#about .profile .section-nav button {
+#about .profile .section-nav .obj-btn, #about .profile .section-nav .ed-btn, #about .profile .section-nav .tech-btn {
   border: none;
+  border-bottom: 1px solid #ECE5C7;
+  width: 100%;
   background: transparent;
   cursor: pointer;
   color: #ECE5C7;
@@ -228,8 +225,15 @@ body.light {
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#about .profile .section-nav button:hover {
+#about .profile .section-nav .obj-btn:hover, #about .profile .section-nav .ed-btn:hover, #about .profile .section-nav .tech-btn:hover {
   color: #C2DED1;
+}
+#about .profile .section-nav .obj-btn.light, #about .profile .section-nav .ed-btn.light, #about .profile .section-nav .tech-btn.light {
+  border-bottom: 1px solid #354259;
+  color: #354259;
+}
+#about .profile .section-nav .obj-btn.click, #about .profile .section-nav .ed-btn.click, #about .profile .section-nav .tech-btn.click {
+  border: none;
 }
 #about .profile .obj, #about .profile .ed, #about .profile .tech {
   margin: 30px;
@@ -324,13 +328,6 @@ body.light {
 }
 #contacts .contact-link.light a {
   color: #354259;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: large;
-  transition: all 0.5s ease-in-out;
-}
-#contacts .contact-link.light a:hover {
-  color: #C2DED1;
 }
 
 #settings {
