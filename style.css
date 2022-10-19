@@ -88,7 +88,7 @@ body.light {
   box-shadow: -15px 15px 12px #354259;
 }
 #about .avt {
-  margin: 30px;
+  margin: 30px 30px 0;
   width: 90%;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -186,48 +186,56 @@ body.light {
   -webkit-animation: animate 1s ease-in-out 1.9s infinite;
           animation: animate 1s ease-in-out 1.9s infinite;
 }
-#about .section-nav {
+#about .view-profile {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
 }
-#about .section-nav a {
+#about .view-profile .profile-btn {
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 50px;
+  padding: 20px;
+  background: rgba(205, 194, 174, 0.3);
+  cursor: pointer;
   color: #ECE5C7;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#about .section-nav a:hover {
+#about .view-profile .profile-btn:hover {
   color: #C2DED1;
 }
-#about .section-nav .obj-link {
-  border-radius: 20px 20px 0 0;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.4);
+#about .profile {
+  display: none;
 }
-#about .section-nav.light a {
-  color: #354259;
+#about .profile.open {
+  display: block;
+}
+#about .profile .section-nav {
+  border-bottom: solid #ECE5C7;
+  display: flex;
+  justify-content: space-evenly;
+}
+#about .profile .section-nav button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #ECE5C7;
   text-decoration: none;
   font-weight: bold;
   font-size: large;
   transition: all 0.5s ease-in-out;
 }
-#about .section-nav.light a:hover {
+#about .profile .section-nav button:hover {
   color: #C2DED1;
 }
-#about #obj,
-#about #ed,
-#about #tech {
-  border-radius: 0 0 20px 20px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.4);
-}
-#about #ed,
-#about #tech {
+#about .profile .obj, #about .profile .ed, #about .profile .tech {
+  margin: 30px;
   display: none;
 }
-#about #ed:target,
-#about #tech:target {
+#about .profile .obj.open, #about .profile .ed.open, #about .profile .tech.open {
   display: block;
 }
 

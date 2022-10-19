@@ -67,7 +67,7 @@ body {
     @include box;
 
     .avt {
-        margin: 30px;
+        margin: 30px 30px 0;
         width: 90%;
         display: grid;
         grid-template-columns: 40% 60%;
@@ -100,41 +100,49 @@ body {
         }
     }
 
-    .section-nav {
+    .view-profile {
         display: flex;
-        justify-content: space-evenly;
-
-        a {
+        justify-content: center;
+        align-items: center;
+        
+        .profile-btn {
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 50px;
+            padding: 20px;
+            background: rgba($color-4, 0.3);
+            cursor: pointer;
             @include link;
         }
+    }
 
-        .obj-link {
-            border-radius: 20px 20px 0 0;
-            padding: 10px;
-            background: rgba(set-color($color-1), 0.4);
+    .profile {
+        display: none;
+    
+        &.open {
+            display: block;
         }
 
-        &.light {
-            a {
-                @include link($color-1);
+        .section-nav {
+            border-bottom: solid $color-3;
+            display: flex;
+            justify-content: space-evenly;
+    
+            button {
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                @include link;
             }
         }
-    }
 
-    #obj,
-    #ed,
-    #tech {
-        border-radius: 0 0 20px 20px;
-        padding: 30px;
-        background: rgba(set-color($color-1), 0.4);
-    }
+        .obj, .ed, .tech {
+            margin: 30px;
+            display: none;
 
-    #ed,
-    #tech {
-        display: none;
-
-        &:target {
-            display: block;
+            &.open {
+                display: block;
+            }
         }
     }
 }
