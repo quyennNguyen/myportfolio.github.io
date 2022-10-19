@@ -259,9 +259,6 @@ header .menu-nav .menu-link.light {
 }
 #features .search-bar {
   margin: 30px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 #features .search-bar .search-input {
   margin-right: 10px;
