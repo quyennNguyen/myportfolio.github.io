@@ -67,15 +67,12 @@ header .menu-nav .menu-link.light {
 #about {
   grid-area: 2/1/span 1/span 1;
   margin: 20px;
-  border: solid #ECE5C7;
+  border: solid;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 #about:target {
   box-shadow: -15px 15px 12px #CDC2AE;
-}
-#about.light {
-  border: solid #354259;
 }
 #about.light:target {
   box-shadow: -15px 15px 12px #354259;
@@ -244,15 +241,12 @@ header .menu-nav .menu-link.light {
 #features {
   grid-area: 2/2/span 2/span 1;
   margin: 20px;
-  border: solid #ECE5C7;
+  border: solid;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 #features:target {
   box-shadow: -15px 15px 12px #CDC2AE;
-}
-#features.light {
-  border: solid #354259;
 }
 #features.light:target {
   box-shadow: -15px 15px 12px #354259;
@@ -307,15 +301,12 @@ header .menu-nav .menu-link.light {
   justify-content: space-evenly;
   align-items: center;
   margin: 20px;
-  border: solid #ECE5C7;
+  border: solid;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 #contacts:target {
   box-shadow: -15px 15px 12px #CDC2AE;
-}
-#contacts.light {
-  border: solid #354259;
 }
 #contacts.light:target {
   box-shadow: -15px 15px 12px #354259;

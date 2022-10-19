@@ -22,7 +22,7 @@
 
 @mixin box {
     margin: 20px;
-    border: solid $color-3;
+    border: solid;
     border-radius: 20px;
     @include transition;
 
@@ -31,8 +31,6 @@
     }
 
     &.light {
-        border: solid $color-1;
-
         &:target {
             box-shadow: -15px 15px 12px $color-1;
         }
