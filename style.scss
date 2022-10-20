@@ -3,7 +3,7 @@
 
 body {
     display: grid;
-    grid-template-columns: 30vw 65vw;
+    grid-template-columns: 40vw 55vw;
     grid-template-rows: 10vh auto auto 10vh;
     justify-content: center;
     align-content: center;
@@ -155,7 +155,7 @@ header {
 }
 
 #features {
-    grid-area: 2 / 2 / span 2 / span 1;
+    grid-area: 2 / 2 / span 1 / span 1;
     @include box;
 
     .project-header {
@@ -246,7 +246,7 @@ header {
 }
 
 #contacts {
-    grid-area: 3 / 1 / span 1 / span 1;
+    grid-area: 3 / 1 / span 1 / span 2;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -295,6 +295,7 @@ footer {
         position: fixed;
         bottom: 0;
         right: 0;
+        background: rgba($color-4, 0.5);
     
         .setting-btn {
             margin: 10px;
@@ -410,6 +411,7 @@ footer {
 @media screen and (min-width: 767px) and (max-width: 1368px) {
     body {
         grid-template-columns: 75vw 20vw;
+        grid-template-rows: 10vh auto auto 10vh;
     }
     
     #about {
