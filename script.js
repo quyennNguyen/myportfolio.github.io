@@ -69,6 +69,7 @@ const aboutTheme = document.querySelector("#about");
 const featureTheme = document.querySelector("#features");
 const searchInputTheme = document.querySelector(".search-input");
 const searchBtnTheme = document.querySelector(".search-btn");
+const launchBtnTheme = document.querySelectorAll(".launch-btn");
 const contactTheme = document.querySelector("#contacts");
 const contactLinkTheme = document.querySelectorAll(".contact-link");
 
@@ -84,6 +85,7 @@ themeCheckBox.addEventListener("change", () => {
   featureTheme.classList.toggle("light");
   searchInputTheme.classList.toggle("light");
   searchBtnTheme.classList.toggle("light");
+  launchBtnTheme.forEach((item) => item.classList.toggle("light"));
   contactTheme.classList.toggle("light");
   contactLinkTheme.forEach((item) => item.classList.toggle("light"));
   topBtn.classList.toggle("light");
