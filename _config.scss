@@ -35,8 +35,24 @@
 
     &.light {
         color: $color-1;
+
+        &:hover {
+            color: $color-2;
+        }
     }
 }
+
+// @mixin button {
+//     border: none;
+//     padding: 20px;
+//     color: $color-3;
+//     background: transparent;
+//     cursor: pointer;
+
+//     &.light {
+//         color: $color-1;
+//     }
+// }
 
 @mixin box {
     margin: 20px;
@@ -45,7 +61,7 @@
     @include transition;
 
     &:target {
-        box-shadow: -15px 15px 12px $color-4;
+        box-shadow: -15px 15px 12px $color-3;
     }
 
     &.light {

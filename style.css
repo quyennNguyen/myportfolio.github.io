@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 600px;
+  min-width: 620px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 35vw 55vw;
@@ -13,14 +13,14 @@ body {
   justify-content: center;
   align-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #ECE5C7;
-  background: #354259;
+  color: #f4f1de;
+  background: #3d405b;
   font-weight: 400;
   font-size: 1.25rem;
 }
 body.light {
-  color: #354259;
-  background: #ECE5C7;
+  color: #3d405b;
+  background: #f4f1de;
 }
 body .title {
   font-weight: 800;
@@ -47,17 +47,20 @@ header .menu-nav {
 }
 header .menu-nav .menu-link {
   margin: 0 20px;
-  color: #ECE5C7;
+  color: #f4f1de;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 header .menu-nav .menu-link:hover {
-  color: #C2DED1;
+  color: #f2cc8f;
 }
 header .menu-nav .menu-link.light {
-  color: #354259;
+  color: #3d405b;
+}
+header .menu-nav .menu-link.light:hover {
+  color: #f2cc8f;
 }
 header .settings {
   display: flex;
@@ -85,12 +88,12 @@ header .settings .down-btn {
   border-radius: 50%;
   padding: 10px 12px;
   position: fixed;
-  color: rgba(236, 229, 199, 0.5);
-  background: rgba(205, 194, 174, 0.3);
+  color: rgba(244, 241, 222, 0.5);
+  background: rgba(242, 204, 143, 0.5);
 }
 header .settings .top-btn.light,
 header .settings .down-btn.light {
-  color: rgba(53, 66, 89, 0.5);
+  color: rgba(61, 64, 91, 0.5);
 }
 header .settings .top-btn {
   top: 10vh;
@@ -109,13 +112,13 @@ header .settings .down-btn {
   transition: all 0.5s ease-in-out;
 }
 #about:target {
-  box-shadow: -15px 15px 12px #CDC2AE;
+  box-shadow: -15px 15px 12px #f4f1de;
 }
 #about.light:target {
-  box-shadow: -15px 15px 12px #354259;
+  box-shadow: -15px 15px 12px #3d405b;
 }
 #about .avt {
-  margin: 30px 30px 0;
+  margin: 30px 30px 10px;
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 20px;
@@ -131,7 +134,6 @@ header .settings .down-btn {
 #about .avt div div {
   margin-top: 30px;
   display: flex;
-  justify-content: flex-end;
 }
 #about .avt div div span:nth-child(1) {
   -webkit-animation: animate1 1s ease-in-out 0.1s infinite;
@@ -210,21 +212,21 @@ header .settings .down-btn {
           animation: animate1 1s ease-in-out 1.9s infinite;
 }
 #about .view-profile {
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #about .view-profile .profile-btn {
-  margin-bottom: 30px;
   border: none;
   border-radius: 50px;
   padding: 20px;
-  color: #ECE5C7;
-  background: rgba(205, 194, 174, 0.5);
+  color: #f4f1de;
+  background: rgba(242, 204, 143, 0.5);
   cursor: pointer;
 }
 #about .view-profile .profile-btn.light {
-  color: #354259;
+  color: #3d405b;
 }
 #about .profile {
   display: none;
@@ -246,31 +248,31 @@ header .settings .down-btn {
 #about .profile .obj-btn,
 #about .profile .ed-btn,
 #about .profile .tech-btn {
-  border: solid #ECE5C7;
+  border: solid #f4f1de;
   border-bottom: none;
   border-radius: 20px 20px 0 0;
   padding: 20px;
-  color: #ECE5C7;
+  color: #f4f1de;
   background: transparent;
   cursor: pointer;
 }
 #about .profile .obj-btn.click,
 #about .profile .ed-btn.click,
 #about .profile .tech-btn.click {
-  color: #354259;
-  background: #ECE5C7;
+  color: #3d405b;
+  background: #f4f1de;
 }
 #about .profile .obj-btn.light,
 #about .profile .ed-btn.light,
 #about .profile .tech-btn.light {
-  border: solid #354259;
-  color: #354259;
+  border: solid #3d405b;
+  color: #3d405b;
 }
 #about .profile .obj-btn.light.click,
 #about .profile .ed-btn.light.click,
 #about .profile .tech-btn.light.click {
-  color: #ECE5C7;
-  background: #354259;
+  color: #f4f1de;
+  background: #3d405b;
 }
 #about .profile .obj,
 #about .profile .ed,
@@ -278,8 +280,8 @@ header .settings .down-btn {
   grid-area: 2/1/span 1/span 3;
   border-radius: 0 0 20px 20px;
   padding: 30px;
-  color: #354259;
-  background: #ECE5C7;
+  color: #3d405b;
+  background: #f4f1de;
   display: none;
 }
 #about .profile .obj.open,
@@ -290,28 +292,31 @@ header .settings .down-btn {
 #about .profile .obj.light,
 #about .profile .ed.light,
 #about .profile .tech.light {
-  color: #ECE5C7;
-  background: #354259;
+  color: #f4f1de;
+  background: #3d405b;
 }
 
 #features {
   grid-area: 2/2/span 1/span 1;
+  display: grid;
+  grid-template-rows: 20% 80%;
   margin: 20px;
   border: solid;
   border-radius: 20px;
   transition: all 0.5s ease-in-out;
 }
 #features:target {
-  box-shadow: -15px 15px 12px #CDC2AE;
+  box-shadow: -15px 15px 12px #f4f1de;
 }
 #features.light:target {
-  box-shadow: -15px 15px 12px #354259;
+  box-shadow: -15px 15px 12px #3d405b;
 }
 #features .project-header {
+  grid-area: 1/1/span 1/span 1;
   margin: 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 #features .project-header .search-bar {
   display: flex;
@@ -322,25 +327,25 @@ header .settings .down-btn {
   border: solid;
   border-radius: 20px;
   padding: 10px 20px;
-  color: #ECE5C7;
+  color: #f4f1de;
   background: transparent;
   outline: none;
 }
 #features .project-header .search-bar .search-input.light {
-  color: #354259;
+  color: #3d405b;
 }
 #features .project-header .search-bar .search-btn {
   border: none;
-  color: #ECE5C7;
+  color: #f4f1de;
   background: transparent;
   cursor: pointer;
 }
 #features .project-header .search-bar .search-btn.light {
-  color: #354259;
+  color: #3d405b;
 }
 #features .projects {
+  grid-area: 2/1/span 1/span 1;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 #features .projects div {
@@ -348,7 +353,9 @@ header .settings .down-btn {
   border: solid;
   border-radius: 20px;
   padding: 20px;
-  width: 20%;
+  max-width: 300px;
+  max-height: 300px;
+  flex: 0 0 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -359,10 +366,6 @@ header .settings .down-btn {
   border-radius: 50%;
   width: 80%;
 }
-#features .projects div h2 {
-  font-weight: 600;
-  font-size: 1.5rem;
-}
 #features .projects div .launch-btn {
   margin: 10px;
   border: none;
@@ -371,19 +374,22 @@ header .settings .down-btn {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: rgba(205, 194, 174, 0.5);
+  background: rgba(242, 204, 143, 0.5);
   cursor: pointer;
-  color: #ECE5C7;
+  color: #f4f1de;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 #features .projects div .launch-btn:hover {
-  color: #C2DED1;
+  color: #f2cc8f;
 }
 #features .projects div .launch-btn.light {
-  color: #354259;
+  color: #3d405b;
+}
+#features .projects div .launch-btn.light:hover {
+  color: #f2cc8f;
 }
 #features .projects div .launch-btn:hover {
   -webkit-animation: animate2 1s ease-in-out infinite;
@@ -401,27 +407,30 @@ header .settings .down-btn {
   transition: all 0.5s ease-in-out;
 }
 #contacts:target {
-  box-shadow: -15px 15px 12px #CDC2AE;
+  box-shadow: -15px 15px 12px #f4f1de;
 }
 #contacts.light:target {
-  box-shadow: -15px 15px 12px #354259;
+  box-shadow: -15px 15px 12px #3d405b;
 }
 #contacts div {
   margin: 30px;
 }
 #contacts div a {
   display: none;
-  color: #ECE5C7;
+  color: #f4f1de;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 #contacts div a:hover {
-  color: #C2DED1;
+  color: #f2cc8f;
 }
 #contacts div a.light {
-  color: #354259;
+  color: #3d405b;
+}
+#contacts div a.light:hover {
+  color: #f2cc8f;
 }
 #contacts div:hover i {
   display: none;
@@ -482,7 +491,12 @@ footer {
     transform: translate(0px);
   }
 }
-@media screen and (min-width: 767px) and (max-width: 1368px) {
+@media screen and (min-width: 1369px) {
+  #features .projects {
+    overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 1368px) {
   body {
     grid-template-columns: 70vw 20vw;
     grid-template-rows: 10vh auto auto 10vh;
@@ -492,12 +506,10 @@ footer {
   }
   #features {
     grid-area: 3/1/span 1/span 2;
+    display: block;
   }
   #features .projects {
     flex-flow: column;
-  }
-  #features .projects div {
-    width: 40%;
   }
   #contacts {
     grid-area: 2/2/span 1/span 1;
@@ -506,13 +518,6 @@ footer {
 }
 @media screen and (max-width: 766px) {
   body {
-    display: flex;
-    flex-flow: column;
-  }
-  #features .projects {
-    flex-flow: column;
-  }
-  #features .projects div {
-    width: 50%;
+    display: block;
   }
 }/*# sourceMappingURL=style.css.map */

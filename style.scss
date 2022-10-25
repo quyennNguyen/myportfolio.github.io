@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 600px;
+    min-width: 620px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 35vw 55vw;
@@ -85,7 +85,7 @@ header {
             padding: 10px 12px;
             position: fixed;
             color: rgba($color-3, 0.5);
-            background: rgba($color-4, 0.3);
+            background: rgba($color-2, 0.5);
 
             &.light {
                 color: rgba($color-1, 0.5);
@@ -109,7 +109,7 @@ header {
     @include box;
 
     .avt {
-        margin: 30px 30px 0;
+        margin: 30px 30px 10px;
         display: grid;
         grid-template-columns: 40% 60%;
         gap: 20px;
@@ -126,7 +126,6 @@ header {
             div {
                 margin-top: 30px;
                 display: flex;
-                justify-content: flex-end;
 
                 @for $i from 1 through 19 {
                     span:nth-child(#{$i}) {
@@ -138,17 +137,17 @@ header {
     }
 
     .view-profile {
+        margin-bottom: 30px;
         display: flex;
         justify-content: center;
         align-items: center;
 
         .profile-btn {
-            margin-bottom: 30px;
             border: none;
             border-radius: 50px;
             padding: 20px;
             color: $color-3;
-            background: rgba($color-4, 0.5);
+            background: rgba($color-2, 0.5);
             cursor: pointer;
 
             &.light {
@@ -229,13 +228,16 @@ header {
 
 #features {
     grid-area: 2 / 2 / span 1 / span 1;
+    display: grid;
+    grid-template-rows: 20% 80%;
     @include box;
 
     .project-header {
+        grid-area: 1 / 1 / span 1 / span 1;
         margin: 30px;
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
 
         .search-bar {
             display: flex;
@@ -269,8 +271,8 @@ header {
     }
 
     .projects {
+        grid-area: 2 / 1 / span 1 / span 1;
         display: flex;
-        justify-content: center;
         align-items: center;
 
         div {
@@ -278,7 +280,9 @@ header {
             border: solid;
             border-radius: 20px;
             padding: 20px;
-            width: 20%;
+            max-width: 300px;
+            max-height: 300px;
+            flex: 0 0 100%;
             display: flex;
             flex-flow: column;
             justify-content: center;
@@ -290,10 +294,6 @@ header {
                 width: 80%;
             }
 
-            h2 {
-                @include subtitle;
-            }
-
             .launch-btn {
                 margin: 10px;
                 border: none;
@@ -302,7 +302,7 @@ header {
                 position: absolute;
                 bottom: 0;
                 right: 0;
-                background: rgba($color-4, 0.5);
+                background: rgba($color-2, 0.5);
                 cursor: pointer;
                 @include link;
 
@@ -376,11 +376,15 @@ footer {
     }
 }
 
-// @media screen and (min-width: 1369px) and (max-width: 2200px) {
+@media screen and (min-width: 1369px) {
+    #features {
+        .projects {
+            overflow-x: scroll;
+        }
+    }
+}
 
-// }
-
-@media screen and (min-width: 767px) and (max-width: 1368px) {
+@media screen and (max-width: 1368px) {
     body {
         grid-template-columns: 70vw 20vw;
         grid-template-rows: 10vh auto auto 10vh;
@@ -392,13 +396,10 @@ footer {
 
     #features {
         grid-area: 3 / 1 / span 1 / span 2;
+        display: block;
 
         .projects {
             flex-flow: column;
-
-            div {
-                width: 40%;
-            }
         }
     }
 
@@ -410,17 +411,6 @@ footer {
 
 @media screen and (max-width: 766px) {
     body {
-        display: flex;
-        flex-flow: column;
-    }
-
-    #features {
-        .projects {
-            flex-flow: column;
-
-            div {
-                width: 50%;
-            }
-        }
+        display: block;
     }
 }
