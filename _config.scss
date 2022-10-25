@@ -8,15 +8,33 @@
     transition: all $duration ease-in-out;
 }
 
-@mixin link($color: $color-3) {
-    color: $color;
+@mixin title {
+    font-weight: map-get($font-weight, "L");
+    font-size: map-get($font-size, "L");
+}
+
+@mixin subtitle {
+    font-weight: map-get($font-weight, "M");
+    font-size: map-get($font-size, "M");
+}
+
+@mixin body {
+    font-weight: map-get($font-weight, "S");
+    font-size: map-get($font-size, "S");
+}
+
+@mixin link {
+    color: $color-3;
     text-decoration: none;
-    font-weight: bold;
-    font-size: large;
+    @include subtitle;
     @include transition;
 
     &:hover {
         color: $color-2;
+    }
+
+    &.light {
+        color: $color-1;
     }
 }
 
@@ -37,12 +55,12 @@
     }
 }
 
-@function set-color($color) {
-    @if (lightness($color) > 40%) {
-        @return $color-1;
-    }
+// @function set-color($color) {
+//     @if (lightness($color) > 40%) {
+//         @return $color-1;
+//     }
 
-    @else {
-        @return white;
-    }
-}
+//     @else {
+//         @return white;
+//     }
+// }

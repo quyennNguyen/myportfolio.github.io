@@ -4,7 +4,12 @@ $color-3: #ECE5C7;
 $color-4: #CDC2AE;
 $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $font-weight: (
-    "small": 400,
-    "medium": 600,
-    "large": 800
+    "S": 400,
+    "M": 600,
+    "L": 800
+);
+$font-size: (
+    "S": 1.25rem,
+    "M": 1.5rem,
+    "L": 3rem
 );

@@ -1,11 +1,3 @@
-// menu
-const menuBtn = document.querySelector(".menu-btn");
-const menuNav = document.querySelector(".menu-nav");
-
-menuBtn.addEventListener("click", () => {
-  menuNav.classList.toggle("open");
-});
-
 // profile
 const profileBtn = document.querySelector(".profile-btn");
 const profile = document.querySelector(".profile");
@@ -50,44 +42,36 @@ techBtn.addEventListener("click", () => {
   tech.classList.add("open");
 });
 
-// settings
-const settingBtn = document.querySelector(".setting-btn");
-const themeBtn = document.querySelector(".theme-btn");
-const topBtn = document.querySelector(".top-btn");
-const downBtn = document.querySelector(".down-btn");
-
-settingBtn.addEventListener("click", () => {
-    themeBtn.classList.toggle("open");
-    topBtn.classList.toggle("open");
-    downBtn.classList.toggle("open");
-});
-
 // dark/light theme
 const themeCheckBox = document.querySelector(".theme-checkbox");
-const menuLinkTheme = document.querySelectorAll(".menu-link");
-const aboutTheme = document.querySelector("#about");
-const featureTheme = document.querySelector("#features");
-const searchInputTheme = document.querySelector(".search-input");
-const searchBtnTheme = document.querySelector(".search-btn");
-const launchBtnTheme = document.querySelectorAll(".launch-btn");
-const contactTheme = document.querySelector("#contacts");
-const contactLinkTheme = document.querySelectorAll(".contact-link");
+const menuLink = document.querySelectorAll(".menu-link");
+const topBtn = document.querySelector(".top-btn");
+const downBtn = document.querySelector(".down-btn");
+const about = document.querySelector("#about");
+const feature = document.querySelector("#features");
+const searchInput = document.querySelector(".search-input");
+const searchBtn = document.querySelector(".search-btn");
+const launchBtn = document.querySelectorAll(".launch-btn");
+const contact = document.querySelector("#contacts");
+const contactLink = document.querySelectorAll(".contact-link");
 
 themeCheckBox.addEventListener("change", () => {
   document.body.classList.toggle("light");
-  menuNav.classList.toggle("light");
-  menuLinkTheme.forEach((item) => item.classList.toggle("light"));
-  aboutTheme.classList.toggle("light");
+  menuLink.forEach((item) => item.classList.toggle("light"));
+  about.classList.toggle("light");
   profileBtn.classList.toggle("light");
   objBtn.classList.toggle("light");
+  obj.classList.toggle("light");
   edBtn.classList.toggle("light");
+  ed.classList.toggle("light");
   techBtn.classList.toggle("light");
-  featureTheme.classList.toggle("light");
-  searchInputTheme.classList.toggle("light");
-  searchBtnTheme.classList.toggle("light");
-  launchBtnTheme.forEach((item) => item.classList.toggle("light"));
-  contactTheme.classList.toggle("light");
-  contactLinkTheme.forEach((item) => item.classList.toggle("light"));
+  tech.classList.toggle("light");
+  feature.classList.toggle("light");
+  searchInput.classList.toggle("light");
+  searchBtn.classList.toggle("light");
+  launchBtn.forEach((item) => item.classList.toggle("light"));
+  contact.classList.toggle("light");
+  contactLink.forEach((item) => item.classList.toggle("light"));
   topBtn.classList.toggle("light");
   downBtn.classList.toggle("light");
 });

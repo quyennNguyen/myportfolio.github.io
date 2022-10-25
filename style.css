@@ -5,52 +5,52 @@
 }
 
 body {
+  min-width: 600px;
+  overflow: scroll;
   display: grid;
-  grid-template-columns: 40vw 55vw;
+  grid-template-columns: 35vw 55vw;
   grid-template-rows: 10vh auto auto 10vh;
   justify-content: center;
   align-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #ECE5C7;
   background: #354259;
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 body.light {
   color: #354259;
   background: #ECE5C7;
 }
+body .title {
+  font-weight: 800;
+  font-size: 3rem;
+}
+body button {
+  font-weight: 400;
+  font-size: 1.25rem;
+}
 
 header {
   grid-area: 1/1/span 1/span 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
 }
-header .logo {
-  margin: 0 10px;
-  font-weight: bold;
-  font-size: 3rem;
-}
-header .menu-btn {
-  margin: 0 10px;
+header .title {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 header .menu-nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
-}
-header .menu-nav.open {
-  visibility: visible;
 }
 header .menu-nav .menu-link {
   margin: 0 20px;
   color: #ECE5C7;
   text-decoration: none;
-  font-weight: bold;
-  font-size: large;
+  font-weight: 600;
+  font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 header .menu-nav .menu-link:hover {
@@ -58,6 +58,47 @@ header .menu-nav .menu-link:hover {
 }
 header .menu-nav .menu-link.light {
   color: #354259;
+}
+header .settings {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .settings .theme-btn .theme-checkbox {
+  display: none;
+}
+header .settings .theme-btn .theme-checkbox:checked + .theme-toggle > #dark {
+  display: none;
+}
+header .settings .theme-btn .theme-checkbox:checked + .theme-toggle > #light {
+  display: inline;
+}
+header .settings .theme-btn .theme-toggle {
+  cursor: pointer;
+}
+header .settings .theme-btn .theme-toggle > #light {
+  display: none;
+}
+header .settings .top-btn,
+header .settings .down-btn {
+  border: solid;
+  border-radius: 50%;
+  padding: 10px 12px;
+  position: fixed;
+  color: rgba(236, 229, 199, 0.5);
+  background: rgba(205, 194, 174, 0.3);
+}
+header .settings .top-btn.light,
+header .settings .down-btn.light {
+  color: rgba(53, 66, 89, 0.5);
+}
+header .settings .top-btn {
+  top: 10vh;
+  right: 5px;
+}
+header .settings .down-btn {
+  bottom: 10vh;
+  right: 5px;
 }
 
 #about {
@@ -86,9 +127,6 @@ header .menu-nav .menu-link.light {
 }
 #about .avt div {
   grid-area: 1/2/span 1/span 1;
-}
-#about .avt div h1 {
-  font-size: 3rem;
 }
 #about .avt div div {
   margin-top: 30px;
@@ -181,16 +219,9 @@ header .menu-nav .menu-link.light {
   border: none;
   border-radius: 50px;
   padding: 20px;
+  color: #ECE5C7;
   background: rgba(205, 194, 174, 0.5);
   cursor: pointer;
-  color: #ECE5C7;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: large;
-  transition: all 0.5s ease-in-out;
-}
-#about .view-profile .profile-btn:hover {
-  color: #C2DED1;
 }
 #about .view-profile .profile-btn.light {
   color: #354259;
@@ -199,39 +230,68 @@ header .menu-nav .menu-link.light {
   display: none;
 }
 #about .profile.open {
-  display: block;
+  display: grid;
+  grid-template-columns: 34% 33% 33%;
+  grid-template-rows: auto auto;
 }
-#about .profile .profile-nav {
-  display: flex;
-  justify-content: space-evenly;
+#about .profile .obj-btn {
+  grid-area: 1/1/span 1/span 1;
 }
-#about .profile .profile-nav .obj-btn, #about .profile .profile-nav .ed-btn, #about .profile .profile-nav .tech-btn {
-  border: none;
-  border-bottom: 1px solid;
-  width: 100%;
+#about .profile .ed-btn {
+  grid-area: 1/2/span 1/span 1;
+}
+#about .profile .tech-btn {
+  grid-area: 1/3/span 1/span 1;
+}
+#about .profile .obj-btn,
+#about .profile .ed-btn,
+#about .profile .tech-btn {
+  border: solid #ECE5C7;
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  padding: 20px;
+  color: #ECE5C7;
   background: transparent;
   cursor: pointer;
-  color: #ECE5C7;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: large;
-  transition: all 0.5s ease-in-out;
 }
-#about .profile .profile-nav .obj-btn:hover, #about .profile .profile-nav .ed-btn:hover, #about .profile .profile-nav .tech-btn:hover {
-  color: #C2DED1;
+#about .profile .obj-btn.click,
+#about .profile .ed-btn.click,
+#about .profile .tech-btn.click {
+  color: #354259;
+  background: #ECE5C7;
 }
-#about .profile .profile-nav .obj-btn.light, #about .profile .profile-nav .ed-btn.light, #about .profile .profile-nav .tech-btn.light {
+#about .profile .obj-btn.light,
+#about .profile .ed-btn.light,
+#about .profile .tech-btn.light {
+  border: solid #354259;
   color: #354259;
 }
-#about .profile .profile-nav .obj-btn.click, #about .profile .profile-nav .ed-btn.click, #about .profile .profile-nav .tech-btn.click {
-  border: none;
+#about .profile .obj-btn.light.click,
+#about .profile .ed-btn.light.click,
+#about .profile .tech-btn.light.click {
+  color: #ECE5C7;
+  background: #354259;
 }
-#about .profile .obj, #about .profile .ed, #about .profile .tech {
-  margin: 30px;
+#about .profile .obj,
+#about .profile .ed,
+#about .profile .tech {
+  grid-area: 2/1/span 1/span 3;
+  border-radius: 0 0 20px 20px;
+  padding: 30px;
+  color: #354259;
+  background: #ECE5C7;
   display: none;
 }
-#about .profile .obj.open, #about .profile .ed.open, #about .profile .tech.open {
+#about .profile .obj.open,
+#about .profile .ed.open,
+#about .profile .tech.open {
   display: block;
+}
+#about .profile .obj.light,
+#about .profile .ed.light,
+#about .profile .tech.light {
+  color: #ECE5C7;
+  background: #354259;
 }
 
 #features {
@@ -259,7 +319,7 @@ header .menu-nav .menu-link.light {
 }
 #features .project-header .search-bar .search-input {
   margin-right: 10px;
-  border: 2px solid;
+  border: solid;
   border-radius: 20px;
   padding: 10px 20px;
   color: #ECE5C7;
@@ -299,11 +359,15 @@ header .menu-nav .menu-link.light {
   border-radius: 50%;
   width: 80%;
 }
+#features .projects div h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
 #features .projects div .launch-btn {
   margin: 10px;
   border: none;
   border-radius: 50%;
-  padding: 15px;
+  padding: 10px 15px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -311,29 +375,25 @@ header .menu-nav .menu-link.light {
   cursor: pointer;
   color: #ECE5C7;
   text-decoration: none;
-  font-weight: bold;
-  font-size: large;
+  font-weight: 600;
+  font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
 #features .projects div .launch-btn:hover {
   color: #C2DED1;
 }
-#features .projects div .launch-btn:hover {
-  -webkit-animation: animate2 1s ease-in-out infinite;
-          animation: animate2 1s ease-in-out infinite;
-}
 #features .projects div .launch-btn.light {
   color: #354259;
 }
-#features .projects div:hover {
-  -webkit-animation: animate1 0.5s ease-in-out;
-          animation: animate1 0.5s ease-in-out;
+#features .projects div .launch-btn:hover {
+  -webkit-animation: animate2 1s ease-in-out infinite;
+          animation: animate2 1s ease-in-out infinite;
 }
 
 #contacts {
   grid-area: 3/1/span 1/span 2;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   margin: 20px;
   border: solid;
@@ -346,28 +406,28 @@ header .menu-nav .menu-link.light {
 #contacts.light:target {
   box-shadow: -15px 15px 12px #354259;
 }
-#contacts .contact-link {
+#contacts div {
   margin: 30px;
 }
-#contacts .contact-link a {
+#contacts div a {
   display: none;
   color: #ECE5C7;
   text-decoration: none;
-  font-weight: bold;
-  font-size: large;
+  font-weight: 600;
+  font-size: 1.5rem;
   transition: all 0.5s ease-in-out;
 }
-#contacts .contact-link a:hover {
+#contacts div a:hover {
   color: #C2DED1;
 }
-#contacts .contact-link:hover i {
+#contacts div a.light {
+  color: #354259;
+}
+#contacts div:hover i {
   display: none;
 }
-#contacts .contact-link:hover a {
+#contacts div:hover a {
   display: inline-block;
-}
-#contacts .contact-link.light a {
-  color: #354259;
 }
 
 footer {
@@ -375,71 +435,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-footer #settings {
-  margin: 10px;
-  border: 2px solid;
-  border-radius: 20px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background: rgba(205, 194, 174, 0.5);
-}
-footer #settings .setting-btn {
-  margin: 10px;
-  cursor: pointer;
-}
-footer #settings .theme-btn {
-  margin: 10px;
-  display: none;
-}
-footer #settings .theme-btn.open {
-  display: block;
-}
-footer #settings .theme-btn .theme-checkbox {
-  display: none;
-}
-footer #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #dark {
-  display: none;
-}
-footer #settings .theme-btn .theme-checkbox:checked + .theme-toggle > #light {
-  display: inline;
-}
-footer #settings .theme-btn .theme-toggle {
-  cursor: pointer;
-}
-footer #settings .theme-btn .theme-toggle > #light {
-  display: none;
-}
-footer #settings .top-btn {
-  margin: 10px;
-  color: #ECE5C7;
-  text-decoration: none;
-  display: none;
-}
-footer #settings .top-btn.open {
-  display: block;
-}
-footer #settings .top-btn.light {
-  color: #354259;
-}
-footer #settings .down-btn {
-  margin: 10px;
-  color: #ECE5C7;
-  text-decoration: none;
-  display: none;
-}
-footer #settings .down-btn.open {
-  display: block;
-}
-footer #settings .down-btn.light {
-  color: #354259;
 }
 
 @-webkit-keyframes animate1 {
@@ -487,21 +482,9 @@ footer #settings .down-btn.light {
     transform: translate(0px);
   }
 }
-@media screen and (min-width: 1369px) and (max-width: 2200px) {
-  #features {
-    max-height: 80vh;
-    overflow-y: scroll;
-  }
-  #features .projects {
-    flex-flow: column;
-  }
-  #features .projects div {
-    width: 40%;
-  }
-}
 @media screen and (min-width: 767px) and (max-width: 1368px) {
   body {
-    grid-template-columns: 75vw 20vw;
+    grid-template-columns: 70vw 20vw;
     grid-template-rows: 10vh auto auto 10vh;
   }
   #about {
