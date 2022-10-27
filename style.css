@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 620px;
+  min-width: 650px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 35vw 55vw;
@@ -21,6 +21,9 @@ body {
 body.light {
   color: #3d405b;
   background: #f4f1de;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 body .title {
   font-weight: 800;
@@ -88,6 +91,7 @@ header .settings .down-btn {
   border-radius: 50%;
   padding: 10px 12px;
   position: fixed;
+  z-index: 1;
   color: rgba(244, 241, 222, 0.5);
   background: rgba(242, 204, 143, 0.5);
 }
@@ -118,7 +122,7 @@ header .settings .down-btn {
   box-shadow: -15px 15px 12px #3d405b;
 }
 #about .avt {
-  margin: 30px 30px 10px;
+  margin: 30px 30px 0;
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 20px;
@@ -212,7 +216,7 @@ header .settings .down-btn {
           animation: animate1 1s ease-in-out 1.9s infinite;
 }
 #about .view-profile {
-  margin-bottom: 30px;
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -300,6 +304,7 @@ header .settings .down-btn {
   grid-area: 2/2/span 1/span 1;
   display: grid;
   grid-template-rows: 20% 80%;
+  position: relative;
   margin: 20px;
   border: solid;
   border-radius: 20px;
@@ -347,26 +352,46 @@ header .settings .down-btn {
   grid-area: 2/1/span 1/span 1;
   display: flex;
   align-items: center;
+  overflow-x: scroll;
 }
-#features .projects div {
+#features .projects::-webkit-scrollbar {
+  display: none;
+}
+#features .projects .project-card {
   margin: 30px;
-  border: solid;
+  border: 4px solid;
   border-radius: 20px;
-  padding: 20px;
   max-width: 300px;
-  max-height: 300px;
+  max-height: 400px;
   flex: 0 0 100%;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  background: #f2cc8f;
 }
-#features .projects div img {
+#features .projects .project-card.light {
+  background: #3d405b;
+}
+#features .projects .project-card.light span {
+  background: #f2cc8f;
+}
+#features .projects .project-card.light .launch-btn {
+  color: #3d405b;
+}
+#features .projects .project-card img {
+  margin: 20px;
   border-radius: 50%;
   width: 80%;
 }
-#features .projects div .launch-btn {
+#features .projects .project-card span {
+  border-radius: 0 0 20px 20px;
+  padding: 20px;
+  width: 100%;
+  background: #3d405b;
+}
+#features .projects .project-card .launch-btn {
   margin: 10px;
   border: none;
   border-radius: 50%;
@@ -374,26 +399,22 @@ header .settings .down-btn {
   position: absolute;
   bottom: 0;
   right: 0;
-  background: rgba(242, 204, 143, 0.5);
   cursor: pointer;
   color: #f4f1de;
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem;
-  transition: all 0.5s ease-in-out;
 }
-#features .projects div .launch-btn:hover {
-  color: #f2cc8f;
-}
-#features .projects div .launch-btn.light {
-  color: #3d405b;
-}
-#features .projects div .launch-btn.light:hover {
-  color: #f2cc8f;
-}
-#features .projects div .launch-btn:hover {
+#features .projects .project-card .launch-btn:hover {
   -webkit-animation: animate2 1s ease-in-out infinite;
           animation: animate2 1s ease-in-out infinite;
+}
+#features .scroll-arrow {
+  position: absolute;
+  top: 20%;
+  right: 5px;
+  -webkit-animation: animate3 1s ease-in-out infinite;
+          animation: animate3 1s ease-in-out infinite;
 }
 
 #contacts {
@@ -491,12 +512,29 @@ footer {
     transform: translate(0px);
   }
 }
-@media screen and (min-width: 1369px) {
-  #features .projects {
-    overflow-x: scroll;
+@-webkit-keyframes animate3 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
-@media screen and (max-width: 1368px) {
+@keyframes animate3 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@media screen and (max-width: 1350px) {
   body {
     grid-template-columns: 70vw 20vw;
     grid-template-rows: 10vh auto auto 10vh;
@@ -506,18 +544,27 @@ footer {
   }
   #features {
     grid-area: 3/1/span 1/span 2;
-    display: block;
-  }
-  #features .projects {
-    flex-flow: column;
   }
   #contacts {
     grid-area: 2/2/span 1/span 1;
     flex-flow: column;
   }
 }
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 800px) {
   body {
     display: block;
+  }
+  #features {
+    display: block;
+  }
+  #features .projects {
+    flex-flow: column;
+  }
+  #features .scroll-arrow {
+    display: none;
+  }
+  #contacts {
+    grid-area: 2/2/span 1/span 1;
+    flex-flow: row;
   }
 }/*# sourceMappingURL=style.css.map */

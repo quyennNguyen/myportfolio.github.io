@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 620px;
+    min-width: 650px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 35vw 55vw;
@@ -17,6 +17,10 @@ body {
     &.light {
         color: $color-1;
         background: $color-3;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
     }
 
     .title {
@@ -84,6 +88,7 @@ header {
             border-radius: 50%;
             padding: 10px 12px;
             position: fixed;
+            z-index: 1;
             color: rgba($color-3, 0.5);
             background: rgba($color-2, 0.5);
 
@@ -109,7 +114,7 @@ header {
     @include box;
 
     .avt {
-        margin: 30px 30px 10px;
+        margin: 30px 30px 0;
         display: grid;
         grid-template-columns: 40% 60%;
         gap: 20px;
@@ -137,7 +142,7 @@ header {
     }
 
     .view-profile {
-        margin-bottom: 30px;
+        margin: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -230,6 +235,7 @@ header {
     grid-area: 2 / 2 / span 1 / span 1;
     display: grid;
     grid-template-rows: 20% 80%;
+    position: relative;
     @include box;
 
     .project-header {
@@ -274,24 +280,49 @@ header {
         grid-area: 2 / 1 / span 1 / span 1;
         display: flex;
         align-items: center;
+        overflow-x: scroll;
 
-        div {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .project-card {
             margin: 30px;
-            border: solid;
+            border: 4px solid;
             border-radius: 20px;
-            padding: 20px;
             max-width: 300px;
-            max-height: 300px;
+            max-height: 400px;
             flex: 0 0 100%;
             display: flex;
             flex-flow: column;
             justify-content: center;
             align-items: center;
             position: relative;
+            background: $color-2;
+
+            &.light {
+                background: $color-1;
+
+                span {
+                    background: $color-2;
+                }
+
+                .launch-btn {
+                    color: $color-1;
+                }
+            }
 
             img {
+                margin: 20px;
                 border-radius: 50%;
                 width: 80%;
+            }
+
+            span {
+                border-radius: 0 0 20px 20px;
+                padding: 20px;
+                width: 100%;
+                background: $color-1;
             }
 
             .launch-btn {
@@ -302,15 +333,23 @@ header {
                 position: absolute;
                 bottom: 0;
                 right: 0;
-                background: rgba($color-2, 0.5);
                 cursor: pointer;
-                @include link;
+                color: $color-3;
+                text-decoration: none;
+                @include subtitle;
 
                 &:hover {
                     animation: animate2 1s ease-in-out infinite;
                 }
             }
         }
+    }
+    
+    .scroll-arrow {
+        position: absolute;
+        top: 20%;
+        right: 5px;
+        animation: animate3 1s ease-in-out infinite;
     }
 }
 
@@ -376,15 +415,21 @@ footer {
     }
 }
 
-@media screen and (min-width: 1369px) {
-    #features {
-        .projects {
-            overflow-x: scroll;
-        }
+@keyframes animate3 {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0px);
     }
 }
 
-@media screen and (max-width: 1368px) {
+@media screen and (max-width: 1350px) {
     body {
         grid-template-columns: 70vw 20vw;
         grid-template-rows: 10vh auto auto 10vh;
@@ -396,11 +441,6 @@ footer {
 
     #features {
         grid-area: 3 / 1 / span 1 / span 2;
-        display: block;
-
-        .projects {
-            flex-flow: column;
-        }
     }
 
     #contacts {
@@ -409,8 +449,25 @@ footer {
     }
 }
 
-@media screen and (max-width: 766px) {
+@media screen and (max-width: 800px) {
     body {
         display: block;
+    }
+
+    #features {
+        display: block;
+
+        .projects {
+            flex-flow: column;
+        }
+
+        .scroll-arrow {
+            display: none;
+        }
+    }
+
+    #contacts {
+        grid-area: 2 / 2 / span 1 / span 1;
+        flex-flow: row;
     }
 }
