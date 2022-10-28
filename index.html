@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header id="header">
+    <header>
         <h1 class="title">QQ</h1>
         <nav class="menu-nav">
             <a class="menu-link" href="#about">About</a>
@@ -18,66 +18,64 @@
             <a class="menu-link" href="#contacts">Contacts</a>
         </nav>
         <div class="settings">
-            <form class="theme-btn">
-                <input class="theme-checkbox" id="theme" name="theme" type="checkbox">
-                <label class="theme-toggle" for="theme">
+            <form id="theme-btn">
+                <input id="theme-checkbox" type="checkbox">
+                <label id="theme-toggle" for="theme-checkbox">
                     <i class="fa-moon fa-solid" id="dark"></i>
                     <i class="fa-sun fa-solid" id="light"></i>
                 </label>
             </form>
-            <a class="top-btn" href="#">
+            <a id="top-btn" href="#">
                 <i class="fa-arrow-up fa-solid"></i>
             </a>
-            <a class="down-btn" href="#footer">
+            <a id="down-btn" href="#footer">
                 <i class="fa-arrow-down fa-solid"></i>
             </a>
         </div>
     </header>
 
     <section id="about">
-        <div class="avt">
+        <div id="intro">
             <img src="img/avatar.jpg" alt="my-avatar">
+            <h1 class="title">Hi! I am <br> Quyen Nguyen</h1>
             <div>
-                <h1 class="title">Hi! I am <br> Quyen Nguyen</h1>
-                <div>
-                    <span>A&nbsp;</span>
-                    <span>F</span>
-                    <span>r</span>
-                    <span>o</span>
-                    <span>n</span>
-                    <span>t</span>
-                    <span>e</span>
-                    <span>n</span>
-                    <span>d&nbsp;</span>
-                    <span>D</span>
-                    <span>e</span>
-                    <span>v</span>
-                    <span>e</span>
-                    <span>l</span>
-                    <span>o</span>
-                    <span>p</span>
-                    <span>e</span>
-                    <span>r</span>
-                </div>
+                <span>A&nbsp;</span>
+                <span>F</span>
+                <span>r</span>
+                <span>o</span>
+                <span>n</span>
+                <span>t</span>
+                <span>e</span>
+                <span>n</span>
+                <span>d&nbsp;</span>
+                <span>D</span>
+                <span>e</span>
+                <span>v</span>
+                <span>e</span>
+                <span>l</span>
+                <span>o</span>
+                <span>p</span>
+                <span>e</span>
+                <span>r</span>
             </div>
         </div>
-        <div class="view-profile">
-            <button class="profile-btn">View Profile</button>
+        <div class="profile-view">
+            <button id="profile-btn">View Profile</button>
         </div>
         <div class="profile">
-            <button class="obj-btn">Objective</button>
-            <button class="ed-btn">Education</button>
-            <button class="tech-btn">Technical Skills</button>
-            <div class="obj">Sharp individual reflecting a strong understanding in frontend developing skills.
+            <button id="obj-btn">Objective</button>
+            <button id="ed-btn">Education</button>
+            <button id="tech-btn">Technical Skills</button>
+            <div id="obj">Sharp individual reflecting a strong understanding in frontend developing skills.
                 Passionate about
                 building web applications. Dedicated and enthusiastic worker. Competent problem solver. Desire to bring
                 gained abilities to return best possible values.</div>
-            <div class="ed">
+            <div id="ed">
                 <strong>AS in Engineering</strong>
                 <br>
                 <em>Northern Virginia Community College</em>
             </div>
-            <div class="tech">
+            <div id="tech">
                 <li>HTML</li>
                 <li>CSS</li>
                 <li>SASS</li>
@@ -90,9 +88,9 @@
     <section id="features">
         <div class="project-header">
             <h1 class="title">MY PROJECTS</h1>
-            <form class="search-bar">
-                <input class="search-input" name="search" type="text">
-                <button class="search-btn" type="submit">
+            <form id="search-bar">
+                <input id="search-input" type="text">
+                <button id="search-btn" type="submit">
                     <i class="fa-magnifying-glass fa-solid"></i>
                 </button>
             </form>
@@ -129,10 +127,6 @@
                     <i class="fa-paper-plane fa-solid"></i>
                 </a>
             </div>
-        </div>
-        <div class="scroll-arrow">
-            scroll 
-            <i class="fa-arrow-right fa-solid"></i>
         </div>
     </section>
 

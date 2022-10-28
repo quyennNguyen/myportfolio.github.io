@@ -1,13 +1,1 @@
-# MY PORTFOLIO WEBSITE
-
-### Description:
-##### - clear and informative
-##### - compact and organized
-##### - efficient view time => should be a one-page instead of multiple-page design => avoid too much scrolling => time-saving for the viewer
-
-### Features:
-##### - compact one-page design
-##### - have a menu button to monitor all parts of the page
-##### - include a few featured projects
-##### - have some page settings to make viewing more interesting
-##### - highlight your skills in HTML, CSS, as well as JavaScript
+This personal website is built from scratch to demonstrate my skills in Frontend Development. CSS flexbox, grid, and media are strongly utilized to create a responsive layout. A touch of JavaScript is also added to make the website more interactive. All of my future projects are planned to be able to get accessed from here.
