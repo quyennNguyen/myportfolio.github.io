@@ -4,10 +4,6 @@
     padding: 0;
 }
 
-@mixin transition($duration: 0.5s) {
-    transition: all $duration ease-in-out;
-}
-
 @mixin title {
     font-weight: map-get($font-weight, "L");
     font-size: map-get($font-size, "L");
@@ -21,6 +17,10 @@
 @mixin body {
     font-weight: map-get($font-weight, "S");
     font-size: map-get($font-size, "S");
+}
+
+@mixin transition($duration: 0.5s) {
+    transition: all $duration ease-in-out;
 }
 
 @mixin link {
