@@ -1,13 +1,8 @@
 // dark/light theme
 const themeCheckBox = document.querySelector("#theme-checkbox");
 const menuLink = document.querySelectorAll(".menu-link");
-const topBtn = document.querySelector("#top-btn");
-const downBtn = document.querySelector("#down-btn");
 const about = document.querySelector("#about");
 const feature = document.querySelector("#features");
-const searchInput = document.querySelector("#search-input");
-const searchBtn = document.querySelector("#search-btn");
-const projectCard = document.querySelectorAll(".project-card");
 const contact = document.querySelector("#contacts");
 const contactLink = document.querySelectorAll(".contact-link");
 
@@ -17,19 +12,11 @@ themeCheckBox.addEventListener("change", () => {
   about.classList.toggle("light");
   profileBtn.classList.toggle("light");
   objBtn.classList.toggle("light");
-  obj.classList.toggle("light");
   edBtn.classList.toggle("light");
-  ed.classList.toggle("light");
   techBtn.classList.toggle("light");
-  tech.classList.toggle("light");
   feature.classList.toggle("light");
-  searchInput.classList.toggle("light");
-  searchBtn.classList.toggle("light");
-  projectCard.forEach((item) => item.classList.toggle("light"));
   contact.classList.toggle("light");
   contactLink.forEach((item) => item.classList.toggle("light"));
-  topBtn.classList.toggle("light");
-  downBtn.classList.toggle("light");
 });
 
 // profile

@@ -39,32 +39,30 @@
     }
 }
 
-// @mixin button {
-//     border: none;
-//     padding: 20px;
-//     color: $color-3;
-//     background: transparent;
-//     cursor: pointer;
-
-//     &.light {
-//         color: $color-1;
-//     }
-// }
+@mixin button {
+    border: none;
+    padding: 15px 20px;
+    color: $color-1;
+    background: transparent;
+    cursor: pointer;
+    @include body;
+}
 
 @mixin box {
-    margin: 20px;
+    margin: 30px;
     border: solid;
     border-radius: 20px;
+    color: $color-1;
+    background: $color-3;
     @include transition;
 
     &:target {
-        box-shadow: -15px 15px 12px $color-3;
+        transform: scale(1.08, 1.08);
     }
 
     &.light {
-        &:target {
-            box-shadow: -15px 15px 12px $color-1;
-        }
+        color: $color-3;
+        background: $color-1;
     }
 }
 
