@@ -5,7 +5,7 @@
 }
 
 body {
-  min-width: 700px;
+  min-width: 750px;
   overflow: scroll;
   display: grid;
   grid-template-columns: 35vw 55vw;
@@ -13,12 +13,12 @@ body {
   justify-content: center;
   align-content: center;
   color: #f4f1de;
-  background: #3d405b;
+  background: rgba(61, 64, 91, 0.9);
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body.light {
   color: #3d405b;
-  background: #f4f1de;
+  background: rgba(244, 241, 222, 0.4);
 }
 body::-webkit-scrollbar {
   display: none;
@@ -50,7 +50,6 @@ header .menu-nav .menu-link {
   color: #f4f1de;
   text-decoration: none;
   font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.5s ease-in-out;
 }
 header .menu-nav .menu-link:hover {
   color: #f2cc8f;
@@ -84,17 +83,18 @@ header .settings #theme-btn #theme-toggle > #light {
 
 #about {
   grid-area: 2/1/span 1/span 1;
-  margin: 30px;
-  border: solid;
+  margin: 20px;
   border-radius: 20px;
-  color: #3d405b;
-  background: #f4f1de;
-  transition: all 0.5s ease-in-out;
+  background: #3d405b;
 }
 #about:target {
-  transform: scale(1.08, 1.08);
+  color: #3d405b;
+  background: #f4f1de;
 }
 #about.light {
+  background: #f4f1de;
+}
+#about.light:target {
   color: #f4f1de;
   background: #3d405b;
 }
@@ -207,10 +207,7 @@ header .settings #theme-btn #theme-toggle > #light {
   cursor: pointer;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 50px;
-  background: rgba(242, 204, 143, 0.5);
-}
-#about .profile-view #profile-btn.light {
-  color: #f4f1de;
+  background: #f2cc8f;
 }
 #about .profile {
   display: none;
@@ -238,7 +235,7 @@ header .settings #theme-btn #theme-toggle > #light {
   background: transparent;
   cursor: pointer;
   font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  border: 1px solid #f4f1de;
+  border: 1px solid #3d405b;
   border-radius: 20px 20px 0 0;
   background: #f2cc8f;
 }
@@ -250,7 +247,7 @@ header .settings #theme-btn #theme-toggle > #light {
 #about .profile #obj-btn.light,
 #about .profile #ed-btn.light,
 #about .profile #tech-btn.light {
-  border: 1px solid #3d405b;
+  border: 1px solid #f4f1de;
 }
 #about .profile #obj-btn.light.click,
 #about .profile #ed-btn.light.click,
@@ -275,20 +272,21 @@ header .settings #theme-btn #theme-toggle > #light {
 
 #features {
   grid-area: 2/2/span 1/span 1;
-  margin: 30px;
-  border: solid;
+  margin: 20px;
   border-radius: 20px;
-  color: #3d405b;
-  background: #f4f1de;
-  transition: all 0.5s ease-in-out;
+  background: #3d405b;
   display: grid;
   grid-template-rows: 20% 80%;
   position: relative;
 }
 #features:target {
-  transform: scale(1.08, 1.08);
+  color: #3d405b;
+  background: #f4f1de;
 }
 #features.light {
+  background: #f4f1de;
+}
+#features.light:target {
   color: #f4f1de;
   background: #3d405b;
 }
@@ -336,7 +334,6 @@ header .settings #theme-btn #theme-toggle > #light {
   color: #f4f1de;
   text-decoration: none;
   font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.5s ease-in-out;
   margin: 20px;
   color: #3d405b;
   position: absolute;
@@ -360,20 +357,21 @@ header .settings #theme-btn #theme-toggle > #light {
 
 #contacts {
   grid-area: 3/1/span 1/span 2;
-  margin: 30px;
-  border: solid;
+  margin: 20px;
   border-radius: 20px;
-  color: #3d405b;
-  background: #f4f1de;
-  transition: all 0.5s ease-in-out;
+  background: #3d405b;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #contacts:target {
-  transform: scale(1.08, 1.08);
+  color: #3d405b;
+  background: #f4f1de;
 }
 #contacts.light {
+  background: #f4f1de;
+}
+#contacts.light:target {
   color: #f4f1de;
   background: #3d405b;
 }
@@ -385,7 +383,6 @@ header .settings #theme-btn #theme-toggle > #light {
   color: #f4f1de;
   text-decoration: none;
   font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.5s ease-in-out;
 }
 #contacts div a:hover {
   color: #f2cc8f;

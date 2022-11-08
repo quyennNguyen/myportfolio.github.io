@@ -24,7 +24,6 @@
     color: $color-3;
     text-decoration: none;
     @include subtitle;
-    @include transition;
 
     &:hover {
         color: $color-2;
@@ -49,20 +48,22 @@
 }
 
 @mixin box {
-    margin: 30px;
-    border: solid;
+    margin: 20px;
     border-radius: 20px;
-    color: $color-1;
-    background: $color-3;
-    @include transition;
+    background: $color-1;
 
     &:target {
-        transform: scale(1.08, 1.08);
+        color: $color-1;
+        background: $color-3;
     }
 
     &.light {
-        color: $color-3;
-        background: $color-1;
+        background: $color-3;
+
+        &:target {
+            color: $color-3;
+            background: $color-1;
+        }
     }
 }
 

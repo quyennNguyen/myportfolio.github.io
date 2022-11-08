@@ -10,7 +10,6 @@ themeCheckBox.addEventListener("change", () => {
   document.body.classList.toggle("light");
   menuLink.forEach((item) => item.classList.toggle("light"));
   about.classList.toggle("light");
-  profileBtn.classList.toggle("light");
   objBtn.classList.toggle("light");
   edBtn.classList.toggle("light");
   techBtn.classList.toggle("light");

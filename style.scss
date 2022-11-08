@@ -2,7 +2,7 @@
 @import "config";
 
 body {
-    min-width: 700px;
+    min-width: 750px;
     overflow: scroll;
     display: grid;
     grid-template-columns: 35vw 55vw;
@@ -10,12 +10,12 @@ body {
     justify-content: center;
     align-content: center;
     color: $color-3;
-    background: $color-1;
+    background: rgba($color-1, 0.9);
     @include body;
 
     &.light {
         color: $color-1;
-        background: $color-3;
+        background: rgba($color-3, 0.4);
     }
 
     &::-webkit-scrollbar {
@@ -109,11 +109,11 @@ header {
             grid-area: 2 / 2 / span 1 / span 1;
             display: flex;
 
-                @for $i from 1 through 19 {
-                    span:nth-child(#{$i}) {
-                        animation: animate1 1s ease-in-out #{$i * 0.1}s infinite;
-                    }
+            @for $i from 1 through 19 {
+                span:nth-child(#{$i}) {
+                    animation: animate1 1s ease-in-out #{$i * 0.1}s infinite;
                 }
+            }
         }
     }
 
@@ -126,11 +126,7 @@ header {
         #profile-btn {
             @include button;
             border-radius: 50px;
-            background: rgba($color-2, 0.5);
-
-            &.light {
-                color: $color-3;
-            }
+            background: $color-2;
         }
     }
 
@@ -159,7 +155,7 @@ header {
         #ed-btn,
         #tech-btn {
             @include button;
-            border: 1px solid $color-3;
+            border: 1px solid $color-1;
             border-radius: 20px 20px 0 0;
             background: $color-2;
 
@@ -168,7 +164,7 @@ header {
             }
 
             &.light {
-                border: 1px solid $color-1;
+                border: 1px solid $color-3;
 
                 &.click {
                     border-bottom: none;
