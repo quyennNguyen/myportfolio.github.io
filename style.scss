@@ -199,6 +199,8 @@ header {
     .project-header {
         grid-area: 1 / 1 / span 1 / span 1;
         margin: 30px;
+        display: flex;
+        align-items: center;
         // display: flex;
         // justify-content: space-between;
         // align-items: flex-start;
@@ -391,7 +393,6 @@ footer {
     }
 
     #contacts {
-        grid-area: 2 / 2 / span 1 / span 1;
         flex-flow: row;
     }
 }
