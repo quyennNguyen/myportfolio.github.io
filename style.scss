@@ -34,19 +34,11 @@ body {
 
 header {
     grid-area: 1 / 1 / span 1 / span 2;
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-
-    h1 {
-        display: flex;
-        align-items: center;
-    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .menu-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
         .menu-link {
             margin: 0 20px;
             @include link;
@@ -54,10 +46,6 @@ header {
     }
 
     .settings {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
         #theme-btn {
             #theme-checkbox {
                 display: none;
