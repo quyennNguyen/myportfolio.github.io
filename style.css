@@ -5,10 +5,10 @@
 }
 
 body {
-  min-width: 750px;
+  min-width: 700px;
   overflow: scroll;
   display: grid;
-  grid-template-columns: 35vw 55vw;
+  grid-template-columns: 40vw 55vw;
   grid-template-rows: 10vh auto auto 10vh;
   justify-content: center;
   align-content: center;
@@ -41,7 +41,7 @@ header .menu-nav .menu-link {
   margin: 0 20px;
   color: #f4f1de;
   text-decoration: none;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 header .menu-nav .menu-link:hover {
   color: #f2cc8f;
@@ -90,11 +90,11 @@ header .settings #theme-btn #theme-toggle > #light {
   display: grid;
   grid-template-columns: 35% 65%;
   grid-template-rows: auto auto;
-  gap: 20px;
 }
 #about #intro img {
   grid-area: 1/1/span 2/span 1;
   border-radius: 50%;
+  padding: 10px;
   width: 100%;
 }
 #about #intro h1 {
@@ -322,7 +322,7 @@ header .settings #theme-btn #theme-toggle > #light {
 #features .projects .project-card .launch-btn {
   color: #f4f1de;
   text-decoration: none;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 20px;
   color: #3d405b;
   position: absolute;
@@ -371,7 +371,7 @@ header .settings #theme-btn #theme-toggle > #light {
   display: none;
   color: #f4f1de;
   text-decoration: none;
-  font: 600 1.5rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font: 400 1.25rem "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 #contacts div a:hover {
   color: #f2cc8f;
@@ -443,7 +443,7 @@ footer {
 }
 @media screen and (max-width: 1350px) {
   body {
-    grid-template-columns: 70vw 20vw;
+    grid-template-columns: 75vw 20vw;
     grid-template-rows: 10vh auto auto 10vh;
   }
   #about {
@@ -461,6 +461,10 @@ footer {
   body {
     display: block;
   }
+  header .title,
+header .settings {
+    margin: 0 10px;
+  }
   #features {
     display: block;
   }
@@ -472,5 +476,8 @@ footer {
   }
   #contacts {
     flex-flow: row;
+  }
+  footer {
+    margin: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
