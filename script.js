@@ -19,45 +19,36 @@ themeCheckBox.addEventListener("change", () => {
 });
 
 // profile
-const profileBtn = document.querySelector("#profile-btn");
-const profile = document.querySelector(".profile");
-const objBtn = document.querySelector("#obj-btn");
-const obj = document.querySelector("#obj");
-const edBtn = document.querySelector("#ed-btn");
-const ed = document.querySelector("#ed");
-const techBtn = document.querySelector("#tech-btn");
-const tech = document.querySelector("#tech");
+const objBtn = document.getElementById("obj-btn");
+const obj = document.getElementById("obj");
+const edBtn = document.getElementById("ed-btn");
+const ed = document.getElementById("ed");
+const techBtn = document.getElementById("tech-btn");
+const tech = document.getElementById("tech");
 
-profileBtn.addEventListener("click", () => {
-  profile.classList.toggle("open");
-  objBtn.classList.add("click");
-  edBtn.classList.remove("click");
-  techBtn.classList.remove("click");
-  obj.classList.add("open");
-  ed.classList.remove("open");
-  tech.classList.remove("open");
-});
-objBtn.addEventListener("click", () => {
-  objBtn.classList.add("click");
-  edBtn.classList.remove("click");
-  techBtn.classList.remove("click");
-  obj.classList.add("open");
-  ed.classList.remove("open");
-  tech.classList.remove("open");
-});
-edBtn.addEventListener("click", () => {
-  objBtn.classList.remove("click");
-  edBtn.classList.add("click");
-  techBtn.classList.remove("click");
-  obj.classList.remove("open");
-  ed.classList.add("open");
-  tech.classList.remove("open");
-});
-techBtn.addEventListener("click", () => {
-  objBtn.classList.remove("click");
-  edBtn.classList.remove("click");
-  techBtn.classList.add("click");
-  obj.classList.remove("open");
-  ed.classList.remove("open");
-  tech.classList.add("open");
-});
+objBtn.onclick = () => {
+  objBtn.style.fontWeight = "800";
+  edBtn.style.fontWeight = "400";
+  techBtn.style.fontWeight = "400";
+  obj.style.display = "block";
+  ed.style.display = "none";
+  tech.style.display = "none";
+};
+
+edBtn.onclick = () => {
+  objBtn.style.fontWeight = "400";
+  edBtn.style.fontWeight = "800";
+  techBtn.style.fontWeight = "400";
+  obj.style.display = "none";
+  ed.style.display = "block";
+  tech.style.display = "none";
+};
+
+techBtn.onclick = () => {
+  objBtn.style.fontWeight = "400";
+  edBtn.style.fontWeight = "400";
+  techBtn.style.fontWeight = "800";
+  obj.style.display = "none";
+  ed.style.display = "none";
+  tech.style.display = "block";
+};

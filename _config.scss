@@ -41,10 +41,14 @@
 @mixin button {
     border: none;
     padding: 15px 20px;
-    color: $color-1;
+    color: $color-3;
     background: transparent;
     cursor: pointer;
     @include body;
+
+    &.light {
+        color: $color-1;
+    }
 }
 
 @mixin box {
