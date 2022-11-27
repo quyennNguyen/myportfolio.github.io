@@ -42,12 +42,13 @@
     border: none;
     padding: 15px 20px;
     color: $color-3;
-    background: transparent;
+    background: rgba($color-1, 0.5);
     cursor: pointer;
     @include body;
 
     &.light {
         color: $color-1;
+        background: rgba($color-3, 0.5);
     }
 }
 
@@ -59,12 +60,6 @@
     &:target {
         color: $color-1;
         background: $color-3;
-
-        #obj-btn,
-        #ed-btn,
-        #tech-btn {
-            color: $color-1;
-        }
     }
 
     &.light {
@@ -73,12 +68,6 @@
         &:target {
             color: $color-3;
             background: $color-1;
-
-            #obj-btn,
-            #ed-btn,
-            #tech-btn {
-                color: $color-3;
-            }
         }
     }
 }
