@@ -59,6 +59,12 @@
     &:target {
         color: $color-1;
         background: $color-3;
+
+        #obj-btn,
+        #ed-btn,
+        #tech-btn {
+            color: $color-1;
+        }
     }
 
     &.light {
@@ -67,6 +73,12 @@
         &:target {
             color: $color-3;
             background: $color-1;
+
+            #obj-btn,
+            #ed-btn,
+            #tech-btn {
+                color: $color-3;
+            }
         }
     }
 }
