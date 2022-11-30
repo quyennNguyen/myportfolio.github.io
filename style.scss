@@ -147,39 +147,6 @@ header {
     .project-header {
         grid-area: 1 / 1 / span 1 / span 1;
         margin: 30px;
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: flex-start;
-
-        // #search-bar {
-        //     display: flex;
-        //     justify-content: center;
-
-        //     #search-input {
-        //         margin-right: 10px;
-        //         border: solid;
-        //         border-radius: 20px;
-        //         padding: 10px 20px;
-        //         color: $color-3;
-        //         background: transparent;
-        //         outline: none;
-
-        //         &.light {
-        //             color: $color-1;
-        //         }
-        //     }
-
-        //     #search-btn {
-        //         border: none;
-        //         color: $color-3;
-        //         background: transparent;
-        //         cursor: pointer;
-
-        //         &.light {
-        //             color: $color-1;
-        //         }
-        //     }
-        // }
     }
 
     .projects {
